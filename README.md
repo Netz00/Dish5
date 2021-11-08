@@ -2,14 +2,22 @@
 
 
 # Requirements
+
 1. Docker
 - Install [Ubuntu WSL](https://www.microsoft.com/hr-hr/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab)
 - Install **Linux kernel update package** [Ubuntu WSL](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 - Install [Docker](https://www.docker.com/get-started)
 
+2. Git
+- Install [Git](https://git-scm.com/downloads)
+
 # Installation
 
 1. Clone repo to your working directory
+
+```bash
+  git clone https://github.com/Netz00/Dish5.git
+```
 
 ## Client
 
