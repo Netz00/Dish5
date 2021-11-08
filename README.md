@@ -11,6 +11,9 @@
 2. Git
 - Install [Git](https://git-scm.com/downloads)
 
+3. Node
+- Install [Node 16.13.0 LTS](https://nodejs.org/en/)
+
 # Installation
 
 1. Clone repo to your working directory
