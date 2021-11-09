@@ -36,6 +36,6 @@
 ## Postgre
 
 2. Start docker if not running
-3. Navigate to __server__ directory `docker-compose up -d`
+3. Navigate to __deployment__ directory `docker-compose up -d`
 4. Wait until docker downloads the images and deploys containers
 5. Open [pgAdmin](http://localhost:5050/) in your browser.
