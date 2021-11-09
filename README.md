@@ -39,3 +39,10 @@
 3. Navigate to __deployment__ directory `docker-compose up -d`
 4. Wait until docker downloads the images and deploys containers
 5. Open [pgAdmin](http://localhost:5050/) in your browser.
+6. Add new server
+7. Server data
+- Name: `<anything>`
+- Host name/address: `dish5-postgres`
+- Port: `5432`
+- Username: `dish5_api`
+- Password: `fesb2021`
