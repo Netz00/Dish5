@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+.row-header {
+  margin: 0px auto;
+  padding: 0px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer {
+  /*background-color: #2e3e4d;*/
+  background-color: white;
+  color: #2e3e4d;
+  margin: 0px auto;
+  padding: 20px 0px 0px 0px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.jumbotron {
+  background-image: url("https://i.ibb.co/W65cfMN/IMG-1469-3.jpg");
+  background-size: 1500px auto;
+  background-position: 0% 30%;
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.jumbotron h1 {
+  font-weight: bold;
+  font-size: 35pt;
+  filter: brightness(90%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.jumbotron p {
+  font-size: 15pt;
+  filter: brightness(90%);
+}
+
+.row-header {
+  padding: 140px 0px;
+}
+
+.jumbotron img {
+  float: right;
+  width: 200px;
+}
+
+address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f;
+}
+
+.navbar-dark {
+  background-color: white;
 }
