@@ -11,7 +11,6 @@
 }
 
 .footer {
-  /*background-color: #2e3e4d;*/
   background-color: white;
   color: #2e3e4d;
   margin: 0px auto;
@@ -26,24 +25,27 @@
   color: white;
 }
 
-.jumbotron h1 {
-  font-weight: bold;
-  font-size: 35pt;
-  filter: brightness(90%);
+.jumbotron img {
+  position: relative;
+  left: 10px;
 }
 
 .jumbotron p {
-  font-size: 15pt;
-  filter: brightness(90%);
+  font-size: 16pt;
+  padding-top: 15px;
 }
 
 .row-header {
-  padding: 140px 0px;
+  padding: 150px 0px;
 }
 
 .jumbotron img {
   float: right;
-  width: 200px;
+  width: 325px;
+}
+
+.row h3 {
+  padding-top: 10px;
 }
 
 address {
@@ -52,6 +54,6 @@ address {
   color: #0f0f0f;
 }
 
-.navbar-dark {
+.navbar-light {
   background-color: white;
 }
