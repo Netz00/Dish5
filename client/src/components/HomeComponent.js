@@ -4,11 +4,11 @@ import { Jumbotron } from "reactstrap";
 function Naslovna() {
   return (
     <>
-      <Jumbotron>
+            <Jumbotron>
         <div className="container">
           <div className="row row-header">
             <div>
-                <img src="assets/images/logo_white.png"></img>
+                <img alt="logo" src="assets/images/logo_white.png"></img>
             </div>
             <div className="col-12 col-sm-22">
               <p>
