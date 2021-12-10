@@ -5,17 +5,19 @@ function Naslovna() {
   return (
     <>
       <Jumbotron>
-            <div className="container">
-                <div className="row row-header">
-                    <div>
-                        <img src="assets/images/logo_white.png"></img>
-                    </div>
-                        <div className="col-12 col-sm-22">
-                            <p>Restoran dish5 je mjesto za beskrajne užitke. <br></br> Napravite rezervaciju ili nam se obratite za <br></br> organizaciju događaja.</p>
-                        </div>
-                </div>
+        <div className="container">
+          <div className="row row-header">
+            <div className="col-12 col-sm-6">
+              <h1>Restoran dish5</h1>
+              <p>
+                {" "}
+                Neki super motivirajući marketinski tekst o dugogodisnjem
+                iskustvu i kulinarskom umijecu. Rezervirajte danas!
+              </p>
             </div>
-        </Jumbotron>
+          </div>
+        </div>
+      </Jumbotron>
     </>
   );
 }
