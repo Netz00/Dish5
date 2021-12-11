@@ -1,5 +1,5 @@
 import { COMMENTS } from '../shared/comments';
-import * as ActionTypes from './ActionTypes';
+import * as ActionTypes from '../constants/actionTypes';
 
 export const Comments = (state = COMMENTS, action) => {
     switch(action.type) {

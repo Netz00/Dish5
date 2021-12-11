@@ -1,4 +1,4 @@
-import * as ActionTypes from './ActionTypes';
+import * as ActionTypes from '../constants/actionTypes';
 import { DISHES } from '../shared/dishes';
 
 export const addComment = (dishId, rating, author, comment) => ({
