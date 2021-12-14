@@ -5,7 +5,7 @@ const PhotoComponent = (props) => {
     <div>
       <img
         src={props.image}
-        className="rounded mx-auto d-block photo"
+        className="rounded mx-auto d-block photo img-fluid"
         alt={props.name}
       ></img>
     </div>
