@@ -3,7 +3,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { actions } from "react-redux-form";
 import { connect } from "react-redux";
 
-import { addComment, fetchDishes } from "../redux/ActionCreators";
+import { addComment, fetchDishes } from "../reducers/ActionCreators";
 import Home from "../pages/HomePage";
 import Menu from "../pages/MenuPage";
 import Contact from "../pages/ContactPage";
