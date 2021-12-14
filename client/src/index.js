@@ -1,16 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
+
+import { reducers } from "./reducers";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap-social/bootstrap-social.css";
 import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 
-import { Provider } from "react-redux";
-import { ConfigureStore } from "./reducers/configureStore";
-
-const store = ConfigureStore();
+const store = createStore(
+  reducers,
+  {},
+  compose(applyMiddleware(thunk, logger))
+);
 
 ReactDOM.render(
   <React.StrictMode>
