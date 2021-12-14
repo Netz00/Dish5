@@ -57,3 +57,7 @@ address {
 .navbar-light {
   background-color: white;
 }
+
+.photo {
+  margin: 10px;
+}
