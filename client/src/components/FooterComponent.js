@@ -17,8 +17,8 @@ const Footer = () => {
           <div className="col-7 col-sm-3">
             <h5>Lokacija</h5>
             <address>
-              Vukovarska 6<br />
-              Split
+              Šetalište Pape Ivana Pavla II<br />
+              21000, Split
               <br />
             </address>
           </div>
