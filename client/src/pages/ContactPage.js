@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Breadcrumb, BreadcrumbItem } from "reactstrap";
-import { Link } from "react-router-dom";
 
 const mapStyles = {
   height: "100vh",
@@ -24,14 +22,8 @@ class ContactPage extends Component {
     return (
       <div className="container">
         <div className="row">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <Link to="/home">Početna</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>Kontakt</BreadcrumbItem>
-          </Breadcrumb>
           <div className="col-12">
-            <h5>Kontakt</h5>
+            <h3>Kontakt</h3>
             <hr />
           </div>
         </div>
