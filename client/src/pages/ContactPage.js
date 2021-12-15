@@ -70,7 +70,7 @@ class ContactPage extends Component {
             >
               <iframe
                 title="mapa"
-                src="https://maps.google.com/maps?q=Vukovarska%206,%20Split&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=%C5%A0etali%C5%A1te%20Pape%20Ivana%20Pavla%20II,%2021000,%20Split,%20Hrvatska&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 frameBorder="0"
                 style={mapStyles}
                 allowFullScreen
