@@ -31,7 +31,7 @@ class ContactPage extends Component {
           <div className="col-12 col-sm-4 offset-sm-1">
             <h5>Adresa</h5>
             <div>
-              Vukovarska 6
+              Šetalište Pape Ivana Pavla II
               <br />
               21000, Split
               <br />
