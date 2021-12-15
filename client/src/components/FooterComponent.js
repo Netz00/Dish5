@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-auto" style={{ padding: "2em 0em" }}>
+          <div className="col-auto">
             <p>© Copyright 2021 Restoran dish5</p>
           </div>
         </div>

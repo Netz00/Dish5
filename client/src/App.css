@@ -14,8 +14,14 @@
   background-color: white;
   color: #2e3e4d;
   margin: 0px auto;
-  padding: 20px 0px 0px 0px;
+  padding: 40px 0px 0px 0px;
 }
+
+.footer p {
+  padding-top: 40px;
+  font-size: 10pt;
+}
+
 .jumbotron {
   background-image: url("https://i.ibb.co/W65cfMN/IMG-1469-3.jpg");
   background-size: 1500px auto;

@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  Label,
-  Col,
-  Row,
-} from "reactstrap";
-import { Link } from "react-router-dom";
+import { Button, Label, Col, Row } from "reactstrap";
 import { Control, Form, Errors } from "react-redux-form";
 
 import Date from "../components/DatePickerComponent";
@@ -36,12 +28,6 @@ class ReservationPage extends Component {
     return (
       <div className="container">
         <div className="row">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <Link to="/home">Home</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>Rezervacije</BreadcrumbItem>
-          </Breadcrumb>
           <div className="col-12">
             <h3>Rezervacije</h3>
             <hr />
