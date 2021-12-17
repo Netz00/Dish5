@@ -6,11 +6,12 @@ function RenderDish({dish}) {
     return(
         <div className="col-12 col-md-5 m-1 mt-4">
             <Card>
-                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardImg width="100%" src={`/assets/images/${dish.name.replace(/\s/g, '')}.png`} alt={dish.name} />
                     <CardImgOverlay>
                         <CardTitle>{dish.name}</CardTitle>
                     </CardImgOverlay>
                     <CardText>{dish.description}</CardText>
+                    <CardTitle>{dish.price} Kn</CardTitle>
             </Card>
         </div>                   
     );
