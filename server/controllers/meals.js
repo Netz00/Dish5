@@ -1,4 +1,4 @@
-const { MealRepo } = require("../services/db");
+const { MealRepo } = require('../services/db');
 
 module.exports = {
   get,
@@ -95,7 +95,7 @@ async function remove(req, res) {
 
   try {
     await MealRepo.remove(Number(id));
-    return res.status(200).send("Post deleted successfully.");
+    return res.status(200).send('Post deleted successfully.');
   } catch (err) {
     return res.status(409).json({ message: err.message });
   }

@@ -1,4 +1,4 @@
-const Meal = require("../models/meal");
+const Meal = require('../models/meal');
 
 module.exports = {
   get,
@@ -19,7 +19,7 @@ function getAll() {
 }
 
 function search(term) {
-  return Meal.query().where("title", "like", `%${term.replace("%", "\\%")}%`);
+  return Meal.query().where('title', 'like', `%${term.replace('%', '\\%')}%`);
 }
 
 function fetchPage(number, size) {

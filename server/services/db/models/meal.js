@@ -1,11 +1,11 @@
-const { Model } = require("objection");
-const knexInstance = require("../knexInstance");
+const { Model } = require('objection');
+const knexInstance = require('../knexInstance');
 
 Model.knex(knexInstance);
 
 class Meal extends Model {
   static get tableName() {
-    return "meal";
+    return 'meal';
   }
 }
 
