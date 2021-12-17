@@ -16,11 +16,6 @@ function RenderDish({dish}) {
     );
 }
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
-const minLength = (len) => (val) => (val) && (val.length >= len);
-
-
 const Dishdetail = (props) => {
     
     if(props.isLoading) {
