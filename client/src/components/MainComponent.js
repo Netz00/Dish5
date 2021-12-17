@@ -3,7 +3,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { actions } from "react-redux-form";
 import { connect } from "react-redux";
 
-import { addComment, fetchDishes } from "../reducers/ActionCreators";
+import { fetchDishes } from "../reducers/ActionCreators";
 import Home from "../pages/HomePage";
 import Menu from "../pages/MenuPage";
 import Contact from "../pages/ContactPage";
@@ -24,8 +24,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addComment: (dishId, rating, author, comment) =>
-    dispatch(addComment(dishId, rating, author, comment)),
   fetchDishes: () => {
     dispatch(fetchDishes());
   },
@@ -42,14 +40,7 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return (
-        <Home
-          dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
-          dishesLoading={this.props.dishes.isLoading}
-          dishesErrMess={this.props.dishes.errMess}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-          photo={this.props.photos.filter((photo) => photo.featured)[0]}
-        />
+        <Home />
       );
     };
 
@@ -63,10 +54,6 @@ class Main extends Component {
           }
           isLoading={this.props.dishes.isLoading}
           ErrMess={this.props.dishes.errMess}
-          comments={this.props.comments.filter(
-            (comment) => comment.dishId === parseInt(match.params.dishId, 10)
-          )}
-          addComment={this.props.addComment}
         />
       );
     };
