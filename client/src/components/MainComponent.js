@@ -9,7 +9,6 @@ import Menu from '../pages/MenuPage';
 import Contact from '../pages/ContactPage';
 import About from '../pages/ReservationPage';
 import Photo from '../pages/PhotogalleryPage';
-import Dishdetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 
@@ -39,22 +38,13 @@ class Main extends Component {
   }
 
   render() {
-    const HomePage = () => {
-      return <Home />;
-    };
-
-    const DishWithId = ({ match }) => {
-      return (
-        <Dishdetail
-          dish={
-            this.props.dishes.dishes.filter(
-              (dish) => dish.id === parseInt(match.params.dishId, 10)
-            )[0]
-          }
-          isLoading={this.props.dishes.isLoading}
-          ErrMess={this.props.dishes.errMess}
-        />
+    const MenuWithId = ({ match }) => {
+      let dishes = this.props.dishes;
+      console.log(dishes);
+      dishes.dishes = this.props.dishes.dishes.filter(
+        (dish) => dish.menuId === parseInt(match.params.menuId, 10)
       );
+      return <Menu dishes={dishes} menus={this.props.menus} />;
     };
 
     return (
@@ -62,12 +52,12 @@ class Main extends Component {
         <Header />
         <Switch>
           <Route path="/home">
-            <HomePage />
+            <Home />
           </Route>
           <Route path="/menu" exact>
-            <Menu dishes={this.props.dishes} menus={this.props.menus} />
+            <Redirect to="/menu/1" />
           </Route>
-          <Route path="/menu/:dishId">{DishWithId}</Route>
+          <Route path="/menu/:menuId">{MenuWithId}</Route>
           <Route path="/reserve">
             <About leaders={this.props.leaders} />
           </Route>
