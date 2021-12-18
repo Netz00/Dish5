@@ -1,16 +1,19 @@
-import React from "react";
-import { Loading } from "../components/LoadingComponent";
-import Dishdetail from "../components/DishdetailComponent";
-
+import React from 'react';
+import { Loading } from '../components/LoadingComponent';
+import Dishdetail from '../components/DishdetailComponent';
+import MenuNavbar from '../components/MenuNavbar';
 
 const Menu = (props) => {
-
   const menu = props.dishes.dishes.map((dish) => {
     return (
       <div key={dish.id} className="col-12 col-md-5 m-1 mt-4">
         <Dishdetail dish={dish} />
       </div>
     );
+  });
+
+  const menuList = props.menus.map((menu) => {
+    return <MenuNavbar title={menu.title} menuId={menu.id} />;
   });
 
   if (props.dishes.isLoading) {
@@ -38,9 +41,8 @@ const Menu = (props) => {
             <hr />
           </div>
         </div>
-        <div className="row">
-          {menu}
-        </div>
+        <div className="row">{menuList}</div>
+        <div className="row">{menu}</div>
       </div>
     );
   }

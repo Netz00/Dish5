@@ -1,13 +1,14 @@
-import { combineReducers } from "redux";
-import { createForms } from "react-redux-form";
+import { combineReducers } from 'redux';
+import { createForms } from 'react-redux-form';
 
-import { Dishes } from "./dishes";
-import { Comments } from "./comments";
-import { Leaders } from "./leaders";
-import { Promotions } from "./promotions";
-import { Photos } from "./photos";
+import { Dishes } from './dishes';
+import { Comments } from './comments';
+import { Leaders } from './leaders';
+import { Promotions } from './promotions';
+import { Photos } from './photos';
+import { Menus } from './menus';
 
-import { InitialFeedback } from "../constants/forms";
+import { InitialFeedback } from '../constants/forms';
 
 export const reducers = combineReducers({
   dishes: Dishes,
@@ -15,6 +16,7 @@ export const reducers = combineReducers({
   promotions: Promotions,
   leaders: Leaders,
   photos: Photos,
+  menus: Menus,
   ...createForms({
     feedback: InitialFeedback,
   }),

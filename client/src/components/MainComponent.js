@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import { actions } from "react-redux-form";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { actions } from 'react-redux-form';
+import { connect } from 'react-redux';
 
-import { fetchDishes } from "../reducers/ActionCreators";
-import Home from "../pages/HomePage";
-import Menu from "../pages/MenuPage";
-import Contact from "../pages/ContactPage";
-import About from "../pages/ReservationPage";
-import Photo from "../pages/PhotogalleryPage";
-import Dishdetail from "./DishdetailComponent";
-import Header from "./HeaderComponent";
-import Footer from "./FooterComponent";
+import { fetchDishes } from '../reducers/ActionCreators';
+import Home from '../pages/HomePage';
+import Menu from '../pages/MenuPage';
+import Contact from '../pages/ContactPage';
+import About from '../pages/ReservationPage';
+import Photo from '../pages/PhotogalleryPage';
+import Dishdetail from './DishdetailComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
     promotions: state.promotions,
     leaders: state.leaders,
     photos: state.photos,
+    menus: state.menus,
   };
 };
 
@@ -28,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchDishes());
   },
   resetFeedbackForm: () => {
-    dispatch(actions.reset("feedback"));
+    dispatch(actions.reset('feedback'));
   },
 });
 
@@ -39,9 +40,7 @@ class Main extends Component {
 
   render() {
     const HomePage = () => {
-      return (
-        <Home />
-      );
+      return <Home />;
     };
 
     const DishWithId = ({ match }) => {
@@ -66,7 +65,7 @@ class Main extends Component {
             <HomePage />
           </Route>
           <Route path="/menu" exact>
-            <Menu dishes={this.props.dishes} />
+            <Menu dishes={this.props.dishes} menus={this.props.menus} />
           </Route>
           <Route path="/menu/:dishId">{DishWithId}</Route>
           <Route path="/reserve">
