@@ -7,12 +7,18 @@ module.exports = {
 
 // get al menus
 function getAll() {
-  return Menu.query();
+  return Menu.query().select('id', 'title');
 }
 
 // get all meals for specific menu
 function get(id) {
-  return Menu.query().findById(id).withGraphFetched('meals');
+  return Menu.query()
+    .select('id', 'title')
+    .findById(id)
+    .withGraphFetched('meals')
+    .modifyGraph('meals', (builder) => {
+      builder.select('id', 'title', 'price');
+    });
 }
 
 // add menu
