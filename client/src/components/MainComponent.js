@@ -15,7 +15,6 @@ import Footer from './FooterComponent';
 const mapStateToProps = (state) => {
   return {
     dishes: state.dishes,
-    comments: state.comments,
     promotions: state.promotions,
     leaders: state.leaders,
     photos: state.photos,
@@ -40,7 +39,6 @@ class Main extends Component {
   render() {
     const MenuWithId = ({ match }) => {
       let dishes = this.props.dishes;
-      console.log(dishes);
       dishes.dishes = this.props.dishes.dishes.filter(
         (dish) => dish.menuId === parseInt(match.params.menuId, 10)
       );
