@@ -5,14 +5,18 @@ export const MENUS = [
   },
   {
     id: 1,
-    title: 'Topla predjela',
+    title: 'Juhe',
   },
   {
     id: 2,
-    title: 'Glavna jela',
+    title: 'Topla predjela',
   },
   {
     id: 3,
+    title: 'Glavna jela',
+  },
+  {
+    id: 4,
     title: 'Deserti',
   },
 ];

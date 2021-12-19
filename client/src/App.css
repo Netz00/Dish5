@@ -23,7 +23,7 @@
 }
 
 .jumbotron {
-  background-image: url("https://i.ibb.co/W65cfMN/IMG-1469-3.jpg");
+  background-image: url('https://i.ibb.co/W65cfMN/IMG-1469-3.jpg');
   background-size: 1500px auto;
   background-position: 0% 30%;
   padding: 70px 30px 70px 30px;
@@ -68,27 +68,25 @@ address {
   margin: 10px;
 }
 
-
-
 .card {
   width: 280px;
   position: relative;
   overflow: hidden;
   align-items: center;
-} 
+}
 
 .card::before {
   position: absolute;
   content: '';
   width: 80%;
   height: 220%;
-  background: rgba(235, 53, 131, 0.7);
+  background: rgba(165, 115, 137, 0.7);
   top: -50%;
   left: -100%;
   z-index: 1;
   transform: rotate(25deg);
   transform-origin: center top 0;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .card:hover:before {
@@ -115,6 +113,10 @@ address {
   transition: 1.1s;
 }
 
-.card:hover .card-text{
+.card-title {
+  color: black;
+}
+
+.card:hover .card-text {
   top: 80px;
 }

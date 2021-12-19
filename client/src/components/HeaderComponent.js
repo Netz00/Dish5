@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -14,8 +14,8 @@ import {
   FormGroup,
   Input,
   Label,
-} from "reactstrap";
-import { NavLink } from "react-router-dom";
+} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
@@ -44,11 +44,11 @@ class Header extends Component {
   handleLogin(event) {
     this.toggleModal();
     alert(
-      "Username " +
+      'Username ' +
         this.username.value +
-        " Password: " +
+        ' Password: ' +
         this.password.value +
-        " Remember: " +
+        ' Remember: ' +
         this.remember.checked
     );
     event.preventDefault();
@@ -62,7 +62,7 @@ class Header extends Component {
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="me-auto" href="/">
               <img
-                src="assets/images/logo.png"
+                src="https://i.ibb.co/C2YTpgm/logo.png"
                 height="25"
                 width="auto"
                 alt="dish5"
@@ -73,7 +73,7 @@ class Header extends Component {
                 <NavItem>
                   <NavLink
                     className="nav-link"
-                    style={{ color: "#2e3e4d" }}
+                    style={{ color: '#2e3e4d' }}
                     to="/home"
                   >
                     Početna
@@ -82,7 +82,7 @@ class Header extends Component {
                 <NavItem>
                   <NavLink
                     className="nav-link"
-                    style={{ color: "#2e3e4d" }}
+                    style={{ color: '#2e3e4d' }}
                     to="/menu"
                   >
                     Meni
@@ -91,7 +91,7 @@ class Header extends Component {
                 <NavItem>
                   <NavLink
                     className="nav-link"
-                    style={{ color: "#2e3e4d" }}
+                    style={{ color: '#2e3e4d' }}
                     to="/reserve"
                   >
                     Rezervacije
@@ -100,7 +100,7 @@ class Header extends Component {
                 <NavItem>
                   <NavLink
                     className="nav-link"
-                    style={{ color: "#2e3e4d" }}
+                    style={{ color: '#2e3e4d' }}
                     to="/photo"
                   >
                     Fotogalerija
@@ -109,7 +109,7 @@ class Header extends Component {
                 <NavItem>
                   <NavLink
                     className="nav-link"
-                    style={{ color: "#2e3e4d" }}
+                    style={{ color: '#2e3e4d' }}
                     to="/contactus"
                   >
                     Kontakt

@@ -53,7 +53,7 @@ class Main extends Component {
             <Home />
           </Route>
           <Route path="/menu" exact>
-            <Redirect to="/menu/1" />
+            <Redirect to="/menu/0" />
           </Route>
           <Route path="/menu/:menuId">{MenuWithId}</Route>
           <Route path="/reserve">
