@@ -90,4 +90,11 @@ export const DISHES = [
     description:
       'Glavni i najdeblji sloj sastoji se od mješavine mekog, svježeg sira, jaja i šećera, a donji sloj se sastoji od baze izrađene od zdrobljenih kolačića',
   },
+  {id: 12,
+    menuId: 3,
+    name: 'Lazanje',
+    price: '70',
+    description:
+      'Tjestenina sa 100% goveđim mesom iz domađeg uzgoja, parmezan i grana padano sir, umak bolognese, umak bechamel ',
+  },
 ];
