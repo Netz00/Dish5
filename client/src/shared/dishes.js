@@ -97,4 +97,29 @@ export const DISHES = [
     description:
       'Tjestenina sa 100% goveđim mesom iz domađeg uzgoja, parmezan i grana padano sir, umak bolognese, umak bechamel ',
   },
+  {
+    id: 13,
+    menuId: 0,
+    name: 'Caesar salata',
+    price: '55',
+    description:
+      'Pileća prsa iz domaćeg uzgoja, zelena salata, umak Caesar, parmezan,sjemenke sezama, dresing',
+  },
+  {
+    id: 14,
+    menuId: 0,
+    name: 'Avocado tost',
+    price: '55',
+    description:
+      'Integralni kruh, avocado, jaje na oko, cherry rajčice, crveni luk, blitva',
+  },
+  {
+    id: 15,
+    menuId: 0,
+    name: 'Caprese salata',
+    price: '55',
+    description:
+      'Rajčica, mozzarella, lovor, domaće maslinovo ulje, aceto balsamico',
+  },
+
 ];
