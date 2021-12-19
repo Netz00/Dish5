@@ -2,10 +2,10 @@ export const DISHES = [
   {
     id: 0,
     menuId: 0,
-    name: 'Dalmatinski pršut',
+    name: 'Hladna plata',
     price: '80',
     description:
-      'Gastronomski specijalitet nastao sušenjem na dimu i buri mesa svinje. Zbog svog specifičnog okusa i neobičnog načina dobivanja smatra se jednim od najoriginalnijih proizvoda hrvatske kuhinje, a samim time je postao nezaobilazan dio turističke i ugostiteljske ponude',
+      'Pršut sušen na dalmatinskoj buri, sir trapist, slavonski kulen i kobasica, domaći kruh ispod peke, domaće maslinovo ulje, masline',
   },
   {
     id: 1,
