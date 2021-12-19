@@ -5,7 +5,7 @@ export const DISHES = [
     name: 'Hladna plata',
     price: '80',
     description:
-      'Pršut sušen na dalmatinskoj buri, sir trapist, slavonski kulen i kobasica, domaći kruh ispod peke, domaće maslinovo ulje, masline',
+      'Pršut sušen na dalmatinskoj buri, paški sir, slavonski kulen i kobasica, domaći kruh ispod peke, domaće maslinovo ulje, masline',
   },
   {
     id: 1,
@@ -92,7 +92,7 @@ export const DISHES = [
   },
   {id: 12,
     menuId: 3,
-    name: 'Lazanje',
+    name: 'Lasagane Bolognese',
     price: '70',
     description:
       'Tjestenina sa 100% goveđim mesom iz domađeg uzgoja, parmezan i grana padano sir, umak bolognese, umak bechamel ',
@@ -121,5 +121,21 @@ export const DISHES = [
     description:
       'Rajčica, mozzarella, lovor, domaće maslinovo ulje, aceto balsamico',
   },
+  {
+    id: 16,
+    menuId: 4,
+    name: 'Tiramisu',
+    price: '18',
+    description:
+      'Piškote, kava, krema od bjelanjaka ',
+  },
+  {
+    id: 17,
+    menuId: 4,
+    name: 'Panna Cotta',
+    price: '18',
+    description:
+      'Kokosovo mlijeko, slatko vrhnje, želatina od kupine',
+  }
 
 ];
