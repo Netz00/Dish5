@@ -125,7 +125,7 @@ export const DISHES = [
     id: 16,
     menuId: 4,
     name: 'Tiramisu',
-    price: '18',
+    price: '20',
     description:
       'Piškote, kava, krema od bjelanjaka ',
   },
@@ -133,9 +133,97 @@ export const DISHES = [
     id: 17,
     menuId: 4,
     name: 'Panna Cotta',
-    price: '18',
+    price: '22',
     description:
       'Kokosovo mlijeko, slatko vrhnje, želatina od kupine',
   }
-
+  ,
+  {
+    id: 18,
+    menuId: 4,
+    name: 'Dalmatinska rožata',
+    price: '22',
+    description:
+      'Tradicionalna dubrovačka rožata s likerom od ruža i preljevom od karamele',
+  },
+  {
+    id: 19,
+    menuId: 4,
+    name: 'Lava cake',
+    price: '25',
+    description:
+      'Popularna poslastica koja će zadovoljiti sve ljubitelje čokolade',
+  },
+  {
+    id: 20,
+    menuId: 1,
+    name: 'Juha od rajčice',
+    price: '30',
+    description:
+      'Krem juha od dalmatinskih rajčica s dodatkom bosiljka,luka i bijelog vina',
+  },
+  {
+    id: 21,
+    menuId: 1,
+    name: 'Krem juha od bundeve',
+    price: '30',
+    description:
+      'Kremasta juha u kombinaciji bundeve,mrkve i krumpira  idealna za jesenske dane',
+  },
+  {
+    id: 22,
+    menuId: 1,
+    name: 'Dnevna juha',
+    price: '30',
+    description:
+      'Tradicionalna juha bogata raznolikim povrćem kao stvorena za svaki dan',
+  },
+  {
+    id: 23,
+    menuId: 1,
+    name: 'Juha od gljiva',
+    price: '30',
+    description:
+      'Jednostavna krem juha sa šampinjonima i peršinom',
+  },
+  {
+    id: 24,
+    menuId: 3,
+    name: 'Škampi',
+    price: '90',
+    description:
+      'Škampi pripremljeni po dalmatinski na buzaru',
+  },
+  {
+    id: 25,
+    menuId: 2,
+    name: 'Špageti Bolognese',
+    price: '45',
+    description:
+      'Ukusni špageti u umaku bolognese po tradicionalnoj talijanskoj recepturi',
+  },
+  {
+    id: 26,
+    menuId: 2,
+    name: 'Špageti Carbonara',
+    price: '50',
+    description:
+      'Carbonara špageti po rimskoj tradiciji',
+  },
+  {
+    id: 27,
+    menuId: 2,
+    name: 'Fettucini Alfredo s kozicama',
+    price: '60',
+    description:
+      'Tjestenina Fettucini Alfredo s jadranskim kozicama',
+  },
+  {
+    id: 28,
+    menuId: 3,
+    name: 'Lasagne Dišpet',
+    price: '75',
+    description:
+      'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',
+  }
 ];
