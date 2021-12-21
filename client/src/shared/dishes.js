@@ -88,9 +88,10 @@ export const DISHES = [
     name: 'Cheesecake',
     price: '25',
     description:
-      'Glavni i najdeblji sloj sastoji se od mješavine mekog, svježeg sira, jaja i šećera, a donji sloj se sastoji od baze izrađene od zdrobljenih kolačića',
+      'Mješavine kreme od mekog, svježeg sira i donjeg sloja izrađenog od zdrobljenih kolačića',
   },
-  {id: 12,
+  {
+    id: 12,
     menuId: 3,
     name: 'Lasagane Bolognese',
     price: '70',
@@ -126,18 +127,15 @@ export const DISHES = [
     menuId: 4,
     name: 'Tiramisu',
     price: '20',
-    description:
-      'Piškote, kava, krema od bjelanjaka ',
+    description: 'Piškote, kava, krema od bjelanjaka ',
   },
   {
     id: 17,
     menuId: 4,
     name: 'Panna Cotta',
     price: '22',
-    description:
-      'Kokosovo mlijeko, slatko vrhnje, želatina od kupine',
-  }
-  ,
+    description: 'Kokosovo mlijeko, slatko vrhnje, želatina od kupine',
+  },
   {
     id: 18,
     menuId: 4,
@@ -183,16 +181,14 @@ export const DISHES = [
     menuId: 1,
     name: 'Juha od gljiva',
     price: '30',
-    description:
-      'Jednostavna krem juha sa šampinjonima i peršinom',
+    description: 'Jednostavna krem juha sa šampinjonima i peršinom',
   },
   {
     id: 24,
     menuId: 3,
     name: 'Škampi',
     price: '90',
-    description:
-      'Škampi pripremljeni po dalmatinski na buzaru',
+    description: 'Škampi pripremljeni po dalmatinski na buzaru',
   },
   {
     id: 25,
@@ -207,23 +203,20 @@ export const DISHES = [
     menuId: 2,
     name: 'Špageti Carbonara',
     price: '50',
-    description:
-      'Carbonara špageti po rimskoj tradiciji',
+    description: 'Carbonara špageti po rimskoj tradiciji',
   },
   {
     id: 27,
     menuId: 2,
     name: 'Fettucini Alfredo s kozicama',
     price: '60',
-    description:
-      'Tjestenina Fettucini Alfredo s jadranskim kozicama',
+    description: 'Tjestenina Fettucini Alfredo s jadranskim kozicama',
   },
   {
     id: 28,
     menuId: 3,
     name: 'Lasagne Dišpet',
     price: '75',
-    description:
-      'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',
-  }
+    description: 'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',
+  },
 ];
