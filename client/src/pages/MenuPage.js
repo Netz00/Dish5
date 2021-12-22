@@ -16,36 +16,21 @@ const Menu = (props) => {
     return <MenuNavbar title={menu.title} menuId={menu.id} />;
   });
 
-  if (props.dishes.isLoading) {
-    return (
-      <div className="container">
-        <div className="row">
-          <Loading />
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h3>Meni</h3>
+          <hr />
         </div>
       </div>
-    );
-  } else if (props.dishes.errMess) {
-    return (
-      <div className="container">
-        <div className="row">
-          <h4>{props.dishes.errMess}</h4>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h3>Meni</h3>
-            <hr />
-          </div>
-        </div>
-        <div className="row">{menuList}</div>
-        <div className="row">{menu}</div>
-      </div>
-    );
-  }
+      <div className="row">{menuList}</div>
+      {(props.dishes.isLoading && <Loading />) ||
+        (props.dishes.errMess && <h4>{props.dishes.errMess}</h4>) || (
+          <div className="row">{menu}</div>
+        )}
+    </div>
+  );
 };
 
 export default Menu;
