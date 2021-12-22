@@ -215,7 +215,7 @@ export const DISHES = [
   {
     id: 28,
     menuId: 3,
-    name: 'Lasagne Dišpet',
+    name: 'Lasagne dish5',
     price: '75',
     description: 'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',
   },
