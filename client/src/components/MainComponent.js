@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { actions } from 'react-redux-form';
 import { connect } from 'react-redux';
 
-import { fetchDishes } from '../reducers/ActionCreators';
 import Home from '../pages/HomePage';
 import Menu from '../pages/MenuPage';
 import Contact from '../pages/ContactPage';
@@ -23,28 +22,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchDishes: () => {
-    dispatch(fetchDishes());
-  },
   resetFeedbackForm: () => {
     dispatch(actions.reset('feedback'));
   },
 });
 
 class Main extends Component {
-  componentDidMount() {
-    this.props.fetchDishes();
-  }
-
   render() {
-    const MenuWithId = ({ match }) => {
-      let dishes = this.props.dishes;
-      dishes.dishes = this.props.dishes.dishes.filter(
-        (dish) => dish.menu_id === parseInt(match.params.menu_id, 10)
-      );
-      return <Menu dishes={dishes} menus={this.props.menus} />;
-    };
-
     return (
       <div>
         <Header />
@@ -55,7 +39,9 @@ class Main extends Component {
           <Route path="/menu" exact>
             <Redirect to="/menu/0" />
           </Route>
-          <Route path="/menu/:menu_id">{MenuWithId}</Route>
+          <Route path="/menu/:menu_id">
+            <Menu />
+          </Route>
           <Route path="/reserve">
             <About leaders={this.props.leaders} />
           </Route>
@@ -73,4 +59,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

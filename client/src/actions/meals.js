@@ -1,26 +1,42 @@
-import {
-  DISHES_LOADING,
-  END_LOADING,
-  ADD_DISHES,
-} from '../constants/actionTypes';
+import * as ActionTypes from '../constants/actionTypes';
+/*
 import * as api from '../api/index.js';
 
-export const getMeals = () => async (dispatch) => {
+export const fetchDishes = () => async (dispatch) => {
   try {
     dispatch({
-      type: DISHES_LOADING,
+      type: ActionTypes.DISHES_LOADING,
     });
-    const {
-      data: { data, currentPage, numberOfPages },
-    } = await api.fetchAllMeals();
+    const { data } = await api.fetchMenus();
 
-    console.log(data);
     dispatch({
-      type: ADD_DISHES,
-      payload: { dishes: data, currentPage, numberOfPages },
+      type: ActionTypes.ADD_DISHES,
+      payload: data,
     });
-    dispatch({ type: END_LOADING });
+
+    dispatch({ type: ActionTypes.END_LOADING });
   } catch (error) {
+    dispatch({
+      type: ActionTypes.DISHES_FAILED,
+      payload: error,
+    });
+
     console.log(error);
   }
+};
+*/
+
+import { DISHES } from '../shared/dishes';
+
+export const fetchDishes = () => (dispatch) => {
+  dispatch({
+    type: ActionTypes.DISHES_LOADING,
+  });
+
+  setTimeout(() => {
+    dispatch({
+      type: ActionTypes.ADD_DISHES,
+      payload: DISHES,
+    });
+  }, 300);
 };

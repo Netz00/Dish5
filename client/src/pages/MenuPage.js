@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import { Loading } from '../components/LoadingComponent';
 import Dishdetail from '../components/DishdetailComponent';
 import MenuNavbar from '../components/MenuNavbar';
 
-const Menu = (props) => {
-  const menu = props.dishes.dishes.map((dish) => {
-    return (
-      <div key={dish.id} className="col-12 col-md-5 m-1 mt-4">
-        <Dishdetail dish={dish} />
-      </div>
-    );
-  });
+import { fetchDishes } from '../actions/meals';
 
-  const menuList = props.menus.map((menu) => {
-    return <MenuNavbar title={menu.name} menu_id={menu.id} />;
-  });
+const Menu = () => {
+  const { menu_id } = useParams();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchDishes());
+  }, [dispatch]);
+
+  const { dishes, menus } = useSelector((state) => state);
 
   return (
     <div className="container">
@@ -24,10 +27,24 @@ const Menu = (props) => {
           <hr />
         </div>
       </div>
-      <div className="row">{menuList}</div>
-      {(props.dishes.isLoading && <Loading />) ||
-        (props.dishes.errMess && <h4>{props.dishes.errMess}</h4>) || (
-          <div className="row">{menu}</div>
+      <div className="row">
+        {menus.map((menu) => {
+          return <MenuNavbar title={menu.name} menu_id={menu.id} />;
+        })}
+      </div>
+      {(dishes.isLoading && <Loading />) ||
+        (dishes.errMess && <h4>{dishes.errMess}</h4>) || (
+          <div className="row">
+            {dishes.dishes.map((dish) => {
+              if (dish.menu_id === parseInt(menu_id, 10))
+                return (
+                  <div key={dish.id} className="col-12 col-md-5 m-1 mt-4">
+                    <Dishdetail dish={dish} />
+                  </div>
+                );
+              return <></>;
+            })}
+          </div>
         )}
     </div>
   );
