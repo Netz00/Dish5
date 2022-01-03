@@ -1,7 +1,7 @@
 export const DISHES = [
   {
     id: 0,
-    menuId: 0,
+    menu_id: 0,
     name: 'Hladna plata',
     price: '80',
     description:
@@ -9,7 +9,7 @@ export const DISHES = [
   },
   {
     id: 1,
-    menuId: 0,
+    menu_id: 0,
     name: 'Carpaccio od tune',
     price: '60',
     description:
@@ -17,21 +17,21 @@ export const DISHES = [
   },
   {
     id: 2,
-    menuId: 1,
+    menu_id: 1,
     name: 'Riblja juha',
     price: '30',
     description: 'Juha s komadićima ribe i rižom',
   },
   {
     id: 3,
-    menuId: 1,
+    menu_id: 1,
     name: 'Krem juha od kozica',
     price: '35',
     description: 'Gusta juha bogatog okusa s komadima kozica.',
   },
   {
     id: 4,
-    menuId: 2,
+    menu_id: 2,
     name: 'Rižoto sa škampima',
     price: '90',
     description:
@@ -39,7 +39,7 @@ export const DISHES = [
   },
   {
     id: 5,
-    menuId: 2,
+    menu_id: 2,
     name: 'Crni rižoto od sipe',
     price: '80',
     description:
@@ -47,21 +47,21 @@ export const DISHES = [
   },
   {
     id: 6,
-    menuId: 2,
+    menu_id: 2,
     name: 'Teleći rižoto',
     price: '70',
     description: 'Umak od telećeg mesa, riža',
   },
   {
     id: 7,
-    menuId: 3,
+    menu_id: 3,
     name: 'Biftek na žaru',
     price: '180',
     description: 'Steak od junećeg filea na žaru, pečeni krumpir',
   },
   {
     id: 8,
-    menuId: 3,
+    menu_id: 3,
     name: 'Ravioli s tikvicama i gljivama',
     price: '70',
     description:
@@ -69,7 +69,7 @@ export const DISHES = [
   },
   {
     id: 9,
-    menuId: 3,
+    menu_id: 3,
     name: 'Burger dish5',
     price: '65',
     description:
@@ -77,14 +77,14 @@ export const DISHES = [
   },
   {
     id: 10,
-    menuId: 4,
+    menu_id: 4,
     name: 'Čokoladna torta',
     price: '25',
     description: 'Kolač aromatiziran rastopljenom čokoladom i kakaom u prahu',
   },
   {
     id: 11,
-    menuId: 4,
+    menu_id: 4,
     name: 'Cheesecake',
     price: '25',
     description:
@@ -92,7 +92,7 @@ export const DISHES = [
   },
   {
     id: 12,
-    menuId: 3,
+    menu_id: 3,
     name: 'Lasagane Bolognese',
     price: '70',
     description:
@@ -100,7 +100,7 @@ export const DISHES = [
   },
   {
     id: 13,
-    menuId: 0,
+    menu_id: 0,
     name: 'Caesar salata',
     price: '55',
     description:
@@ -108,7 +108,7 @@ export const DISHES = [
   },
   {
     id: 14,
-    menuId: 0,
+    menu_id: 0,
     name: 'Avocado tost',
     price: '55',
     description:
@@ -116,7 +116,7 @@ export const DISHES = [
   },
   {
     id: 15,
-    menuId: 0,
+    menu_id: 0,
     name: 'Caprese salata',
     price: '55',
     description:
@@ -124,21 +124,21 @@ export const DISHES = [
   },
   {
     id: 16,
-    menuId: 4,
+    menu_id: 4,
     name: 'Tiramisu',
     price: '20',
     description: 'Piškote, kava, krema od bjelanjaka ',
   },
   {
     id: 17,
-    menuId: 4,
+    menu_id: 4,
     name: 'Panna Cotta',
     price: '22',
     description: 'Kokosovo mlijeko, slatko vrhnje, želatina od kupine',
   },
   {
     id: 18,
-    menuId: 4,
+    menu_id: 4,
     name: 'Dalmatinska rožata',
     price: '22',
     description:
@@ -146,7 +146,7 @@ export const DISHES = [
   },
   {
     id: 19,
-    menuId: 4,
+    menu_id: 4,
     name: 'Lava cake',
     price: '25',
     description:
@@ -154,7 +154,7 @@ export const DISHES = [
   },
   {
     id: 20,
-    menuId: 1,
+    menu_id: 1,
     name: 'Juha od rajčice',
     price: '30',
     description:
@@ -162,7 +162,7 @@ export const DISHES = [
   },
   {
     id: 21,
-    menuId: 1,
+    menu_id: 1,
     name: 'Krem juha od bundeve',
     price: '30',
     description:
@@ -170,7 +170,7 @@ export const DISHES = [
   },
   {
     id: 22,
-    menuId: 1,
+    menu_id: 1,
     name: 'Dnevna juha',
     price: '30',
     description:
@@ -178,21 +178,21 @@ export const DISHES = [
   },
   {
     id: 23,
-    menuId: 1,
+    menu_id: 1,
     name: 'Juha od gljiva',
     price: '30',
     description: 'Jednostavna krem juha sa šampinjonima i peršinom',
   },
   {
     id: 24,
-    menuId: 3,
+    menu_id: 3,
     name: 'Škampi',
     price: '90',
     description: 'Škampi pripremljeni po dalmatinski na buzaru',
   },
   {
     id: 25,
-    menuId: 2,
+    menu_id: 2,
     name: 'Špageti Bolognese',
     price: '45',
     description:
@@ -200,21 +200,21 @@ export const DISHES = [
   },
   {
     id: 26,
-    menuId: 2,
+    menu_id: 2,
     name: 'Špageti Carbonara',
     price: '50',
     description: 'Carbonara špageti po rimskoj tradiciji',
   },
   {
     id: 27,
-    menuId: 2,
+    menu_id: 2,
     name: 'Fettucini Alfredo s kozicama',
     price: '60',
     description: 'Tjestenina Fettucini Alfredo s jadranskim kozicama',
   },
   {
     id: 28,
-    menuId: 3,
+    menu_id: 3,
     name: 'Lasagne dish5',
     price: '75',
     description: 'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',

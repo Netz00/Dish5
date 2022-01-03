@@ -40,7 +40,7 @@ class Main extends Component {
     const MenuWithId = ({ match }) => {
       let dishes = this.props.dishes;
       dishes.dishes = this.props.dishes.dishes.filter(
-        (dish) => dish.menuId === parseInt(match.params.menuId, 10)
+        (dish) => dish.menu_id === parseInt(match.params.menu_id, 10)
       );
       return <Menu dishes={dishes} menus={this.props.menus} />;
     };
@@ -55,7 +55,7 @@ class Main extends Component {
           <Route path="/menu" exact>
             <Redirect to="/menu/0" />
           </Route>
-          <Route path="/menu/:menuId">{MenuWithId}</Route>
+          <Route path="/menu/:menu_id">{MenuWithId}</Route>
           <Route path="/reserve">
             <About leaders={this.props.leaders} />
           </Route>

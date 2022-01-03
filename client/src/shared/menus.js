@@ -1,22 +1,22 @@
 export const MENUS = [
   {
     id: 0,
-    title: 'Hladna predjela',
+    name: 'Hladna predjela',
   },
   {
     id: 1,
-    title: 'Juhe',
+    name: 'Juhe',
   },
   {
     id: 2,
-    title: 'Topla predjela',
+    name: 'Topla predjela',
   },
   {
     id: 3,
-    title: 'Glavna jela',
+    name: 'Glavna jela',
   },
   {
     id: 4,
-    title: 'Deserti',
+    name: 'Deserti',
   },
 ];

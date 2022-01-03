@@ -13,7 +13,7 @@ const Menu = (props) => {
   });
 
   const menuList = props.menus.map((menu) => {
-    return <MenuNavbar title={menu.title} menuId={menu.id} />;
+    return <MenuNavbar title={menu.name} menu_id={menu.id} />;
   });
 
   return (
