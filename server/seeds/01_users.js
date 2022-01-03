@@ -6,7 +6,6 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('users').insert([
         {
-          id: 1,
           email: 'test1@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -16,7 +15,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 2,
           email: 'test2@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -26,7 +24,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 3,
           email: 'test3@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -36,7 +33,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 4,
           email: 'test4@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -46,7 +42,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 5,
           email: 'test5@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -56,7 +51,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 6,
           email: 'test6@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -66,7 +60,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 7,
           email: 'test7@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -76,7 +69,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 8,
           email: 'test8@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -86,7 +78,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 9,
           email: 'test9@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -96,7 +87,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 10,
           email: 'test10@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',
@@ -106,7 +96,6 @@ exports.seed = function (knex) {
           type: 0,
         },
         {
-          id: 11,
           email: 'test11@gmail.com',
           ip_addr: '192.168.0.1',
           password: 'test@gmail.com',

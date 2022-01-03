@@ -19,7 +19,7 @@ function getAll() {
 }
 
 function search(term) {
-  return Meal.query().where('title', 'like', `%${term.replace('%', '\\%')}%`);
+  return Meal.query().where('name', 'like', `%${term.replace('%', '\\%')}%`);
 }
 
 function fetchPage(number, size) {

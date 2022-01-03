@@ -8,17 +8,17 @@ module.exports = {
 
 // get al menus
 function getAll() {
-  return Menu.query().select('id', 'title');
+  return Menu.query().select('id', 'name');
 }
 
 // get all meals for specific menu
 function get(id) {
   return Menu.query()
-    .select('id', 'title')
+    .select('id', 'name')
     .findById(id)
     .withGraphFetched('meals')
     .modifyGraph('meals', (builder) => {
-      builder.select('id', 'title', 'price');
+      builder.select('id', 'name', 'price');
     });
 }
 
@@ -26,10 +26,10 @@ function get(id) {
 // get all meals for all menus
 function getAllMeals(id) {
   return Menu.query()
-    .select('id', 'title')
+    .select('id', 'name')
     .withGraphFetched('meals')
     .modifyGraph('meals', (builder) => {
-      builder.select('id', 'title', 'price');
+      builder.select('id', 'name', 'price');
     });
 }
 

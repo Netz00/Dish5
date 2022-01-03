@@ -24,7 +24,7 @@ async function getAll(req, res) {
     //get array of meals with menu_id for each meal
     const result = await MenuRepo.getAllMeals();
 
-    const meals_with_menuId = [].concat.apply(
+    const meals_with_menu_id = [].concat.apply(
       [],
       result.map((menu) =>
         menu.meals.map((meal) => ({
@@ -34,7 +34,7 @@ async function getAll(req, res) {
       )
     );
 
-    return res.status(200).json(meals_with_menuId);
+    return res.status(200).json(meals_with_menu_id);
   } catch (err) {
     return res.status(404).json({ message: error.message });
   }

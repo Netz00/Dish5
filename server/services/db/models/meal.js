@@ -7,6 +7,9 @@ class Meal extends Model {
   static get tableName() {
     return 'meal';
   }
+  static get idColumn() {
+    return 'id';
+  }
 }
 
 module.exports = Meal;

@@ -2,7 +2,7 @@ const express = require('express');
 const {
   getAll,
   get,
-  searchByTitle,
+  searchByName,
   insert,
   patch,
   remove,
@@ -11,9 +11,9 @@ const {
 const router = express.Router();
 
 /**
- * Search all meals by title
+ * Search all meals by name
  */
-router.get('/search', searchByTitle);
+router.get('/search', searchByName);
 
 /**
  * Returns array of all meals

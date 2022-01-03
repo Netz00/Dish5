@@ -3,7 +3,7 @@ const { MealRepo } = require('../services/db');
 module.exports = {
   get,
   getAll,
-  searchByTitle,
+  searchByName,
   insert,
   patch,
   remove,
@@ -20,11 +20,11 @@ async function get(req, res) {
   }
 }
 
-async function searchByTitle(req, res) {
+async function searchByName(req, res) {
   const { searchQuery } = req.query;
   try {
-    const title = searchQuery;
-    const result = await MealRepo.search(title);
+    const name = searchQuery;
+    const result = await MealRepo.search(name);
     return res.status(200).json(result);
   } catch (err) {
     return res.status(404).json({ message: error.message });

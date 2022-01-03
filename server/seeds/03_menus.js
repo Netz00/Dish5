@@ -5,9 +5,9 @@ exports.seed = function (knex) {
     .then(function () {
       // Inserts seed entries
       return knex('menu').insert([
-        { id: 1, title: 'menu1' },
-        { id: 2, title: 'menu2' },
-        { id: 3, title: 'menu3' },
+        { name: 'menu1' },
+        { name: 'menu2' },
+        { name: 'menu3' },
       ]);
     });
 };

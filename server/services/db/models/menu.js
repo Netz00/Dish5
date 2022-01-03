@@ -15,10 +15,10 @@ class Menu extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['title'],
+      required: ['name'],
       properties: {
         id: { type: 'integer' },
-        title: { type: 'string', minLength: 1, maxLength: 64 },
+        name: { type: 'string', minLength: 1, maxLength: 64 },
       },
     };
   }
