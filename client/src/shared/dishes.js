@@ -1,15 +1,7 @@
 export const DISHES = [
   {
-    id: 0,
-    menu_id: 0,
-    name: 'Hladna plata',
-    price: '80',
-    description:
-      'Pršut sušen na dalmatinskoj buri, paški sir, slavonski kulen i kobasica, domaći kruh ispod peke, domaće maslinovo ulje, masline',
-  },
-  {
     id: 1,
-    menu_id: 0,
+    menu_id: 5,
     name: 'Carpaccio od tune',
     price: '60',
     description:
@@ -100,7 +92,7 @@ export const DISHES = [
   },
   {
     id: 13,
-    menu_id: 0,
+    menu_id: 5,
     name: 'Caesar salata',
     price: '55',
     description:
@@ -108,7 +100,7 @@ export const DISHES = [
   },
   {
     id: 14,
-    menu_id: 0,
+    menu_id: 5,
     name: 'Avocado tost',
     price: '55',
     description:
@@ -116,7 +108,7 @@ export const DISHES = [
   },
   {
     id: 15,
-    menu_id: 0,
+    menu_id: 5,
     name: 'Caprese salata',
     price: '55',
     description:
@@ -218,5 +210,13 @@ export const DISHES = [
     name: 'Lasagne dish5',
     price: '75',
     description: 'Jedinstvene lasagne u bijelom umaku sa špinatom i feta sirom',
+  },
+  {
+    id: 29,
+    menu_id: 5,
+    name: 'Hladna plata',
+    price: '80',
+    description:
+      'Pršut sušen na dalmatinskoj buri, paški sir, slavonski kulen i kobasica, domaći kruh ispod peke, domaće maslinovo ulje, masline',
   },
 ];

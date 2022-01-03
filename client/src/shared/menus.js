@@ -1,9 +1,5 @@
 export const MENUS = [
   {
-    id: 0,
-    name: 'Hladna predjela',
-  },
-  {
     id: 1,
     name: 'Juhe',
   },
@@ -18,5 +14,9 @@ export const MENUS = [
   {
     id: 4,
     name: 'Deserti',
+  },
+  {
+    id: 5,
+    name: 'Hladna predjela',
   },
 ];
