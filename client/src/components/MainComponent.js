@@ -37,7 +37,7 @@ class Main extends Component {
             <Home />
           </Route>
           <Route path="/menu" exact>
-            <Redirect to="/menu/0" />
+            <Redirect to="/menu/1" />
           </Route>
           <Route path="/menu/:menu_id">
             <Menu />
