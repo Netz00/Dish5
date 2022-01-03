@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MenuNavbar = ({ title, menu_id }) => {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a class="nav-link active" aria-current="page" href={`/menu/${menu_id}`}>
+        <Link
+          class="nav-link active"
+          aria-current="page"
+          to={`/menu/${menu_id}`}
+        >
           {title}
-        </a>
+        </Link>
       </li>
     </ul>
   );
