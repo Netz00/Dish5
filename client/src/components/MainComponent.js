@@ -14,7 +14,6 @@ import Footer from './FooterComponent';
 const mapStateToProps = (state) => {
   return {
     dishes: state.dishes,
-    promotions: state.promotions,
     photos: state.photos,
     menus: state.menus,
   };
