@@ -28,15 +28,11 @@ class Menu extends Model {
 
     return {
       meals: {
-        relation: Model.ManyToManyRelation,
+        relation: Model.HasManyRelation,
         modelClass: Meal,
         join: {
           from: 'menu.id',
-          through: {
-            from: 'menu_offer_meals.menu_id',
-            to: 'menu_offer_meals.meal_id',
-          },
-          to: 'meal.id',
+          to: 'meal.menu_id',
         },
       },
     };
