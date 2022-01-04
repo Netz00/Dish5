@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
   return {
     dishes: state.dishes,
     promotions: state.promotions,
-    leaders: state.leaders,
     photos: state.photos,
     menus: state.menus,
   };
@@ -43,7 +42,7 @@ class Main extends Component {
             <Menu />
           </Route>
           <Route path="/reserve">
-            <About leaders={this.props.leaders} />
+            <About />
           </Route>
           <Route path="/photo">
             <Photo photos={this.props.photos} />
