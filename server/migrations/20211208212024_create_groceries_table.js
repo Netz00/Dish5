@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('groceries', function (table) {
+  return knex.schema.createTable('grocery', function (table) {
     table.increments('id').primary();
     table.string('name', [64]).unique().notNullable();
     table.float('balance').notNullable();
@@ -13,5 +13,5 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('groceries');
+  return knex.schema.dropTable('grocery');
 };

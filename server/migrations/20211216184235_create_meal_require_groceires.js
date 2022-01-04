@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('meal_require_groceires', function (table) {
     table
       .integer('grocery_id')
-      .references('groceries.id')
+      .references('grocery.id')
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
     table
