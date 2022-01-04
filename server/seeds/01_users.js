@@ -1,10 +1,10 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('users')
+  return knex('user')
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex('users').insert([
+      return knex('user').insert([
         {
           email: 'test1@gmail.com',
           ip_addr: '192.168.0.1',
