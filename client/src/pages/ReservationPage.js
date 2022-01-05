@@ -21,11 +21,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class ReservationPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
   handleSubmit(values) {
     console.log('Current State is: ' + JSON.stringify(values));
