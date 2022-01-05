@@ -10,3 +10,6 @@ export const ADD_DISHES = 'ADD_DISHES';
 export const START_LOADING_PHOTOS = 'START_LOADING_PHOTOS';
 export const ADD_PHOTOS = 'ADD_PHOTOS';
 export const PHOTOS_FAILED = 'PHOTOS_FAILED';
+
+export const AUTH = 'AUTH';
+export const LOGOUT = 'LOGOUT';
