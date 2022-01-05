@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
@@ -11,8 +11,8 @@ import Photo from './pages/PhotogalleryPage';
 import Header from './components/HeaderComponent';
 import Footer from './components/FooterComponent';
 
-class App extends Component {
-  render() {
+const App = () => {
+
     return (
       <BrowserRouter>
         <Header />
@@ -33,14 +33,13 @@ class App extends Component {
             <Photo />
           </Route>
           <Route path="/contactus">
-            <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
+            <Contact />
           </Route>
           <Redirect to="/home" />
         </Switch>
         <Footer />
       </BrowserRouter>
     );
-  }
 }
 
 export default App;
