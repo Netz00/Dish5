@@ -1,8 +1,11 @@
-import React, { Component } from "react";
-import { Button, Label, Col, Row } from "reactstrap";
-import { Control, Form, Errors } from "react-redux-form";
+import React, { Component } from 'react';
+import { Button, Label, Col, Row } from 'reactstrap';
+import { Control, Form, Errors } from 'react-redux-form';
 
-import Date from "../components/DatePickerComponent";
+import { actions } from 'react-redux-form';
+import { connect } from 'react-redux';
+
+import Date from '../components/DatePickerComponent';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -10,6 +13,12 @@ const minLength = (len) => (val) => val && val.length >= len;
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) =>
   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
+const mapDispatchToProps = (dispatch) => ({
+  resetFeedbackForm: () => {
+    dispatch(actions.reset('feedback'));
+  },
+});
 
 class ReservationPage extends Component {
   constructor(props) {
@@ -19,8 +28,8 @@ class ReservationPage extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    console.log('Current State is: ' + JSON.stringify(values));
+    alert('Current State is: ' + JSON.stringify(values));
     this.props.resetFeedbackForm();
   }
 
@@ -64,8 +73,8 @@ class ReservationPage extends Component {
                     model=".firstName"
                     show="touched"
                     messages={{
-                      minLength: "Mora biti dulje od 2 slova",
-                      maxLength: "Mora biti kraće od 15 slova",
+                      minLength: 'Mora biti dulje od 2 slova',
+                      maxLength: 'Mora biti kraće od 15 slova',
                     }}
                   />
                 </Col>
@@ -92,8 +101,8 @@ class ReservationPage extends Component {
                     model=".lastName"
                     show="touched"
                     messages={{
-                      minLength: "Mora biti dulje od 2 slova",
-                      maxLength: "Mora biti kraće od 15 slova",
+                      minLength: 'Mora biti dulje od 2 slova',
+                      maxLength: 'Mora biti kraće od 15 slova',
                     }}
                   />
                 </Col>
@@ -121,9 +130,9 @@ class ReservationPage extends Component {
                     model=".telnum"
                     show="touched"
                     messages={{
-                      minLength: "Mora biti broj dulji od 2 znamenke",
-                      maxLength: "Mora biti broj kraći od 15 znamenki",
-                      isNumber: "Mora biti broj",
+                      minLength: 'Mora biti broj dulji od 2 znamenke',
+                      maxLength: 'Mora biti broj kraći od 15 znamenki',
+                      isNumber: 'Mora biti broj',
                     }}
                   />
                 </Col>
@@ -149,7 +158,7 @@ class ReservationPage extends Component {
                     model=".email"
                     show="touched"
                     messages={{
-                      validEmail: "Nevažeća email adresa",
+                      validEmail: 'Nevažeća email adresa',
                     }}
                   />
                 </Col>
@@ -219,4 +228,4 @@ class ReservationPage extends Component {
   }
 }
 
-export default ReservationPage;
+export default connect(mapDispatchToProps)(ReservationPage);
