@@ -1,14 +1,12 @@
-export const FETCH_ALL = "FETCH_ALL";
-export const FETCH_BY_SEARCH = "FETCH_BY_SEARCH";
-export const FETCH_MEAL = "FETCH_MEAL";
-export const END_LOADING = "END_LOADING";
-export const START_LOADING = "START_LOADING";
+export const START_LOADING_MENUS = 'START_LOADING_MENUS';
+export const MENUS_FAILED = 'MENUS_FAILED';
+export const ADD_MENUS = 'ADD_MENUS';
 
-
-/**
- * Old action types
- */
-export const ADD_COMMENT = 'ADD_COMMENT';
-export const DISHES_LOADING = 'DISHES_LOADING';
+export const START_LOADING_DISHES = 'START_LOADING_DISHES';
+export const END_LOADING_DISHES = 'END_LOADING_DISHES';
 export const DISHES_FAILED = 'DISHES_FAILED';
 export const ADD_DISHES = 'ADD_DISHES';
+
+export const START_LOADING_PHOTOS = 'START_LOADING_PHOTOS';
+export const ADD_PHOTOS = 'ADD_PHOTOS';
+export const PHOTOS_FAILED = 'PHOTOS_FAILED';

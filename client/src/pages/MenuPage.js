@@ -7,6 +7,7 @@ import Dishdetail from '../components/DishdetailComponent';
 import MenuNavbar from '../components/MenuNavbar';
 
 import { fetchDishes } from '../actions/meals';
+import { fetchMenus } from '../actions/menus';
 
 const Menu = () => {
   const { menu_id } = useParams();
@@ -14,6 +15,7 @@ const Menu = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(fetchMenus());
     dispatch(fetchDishes());
   }, [dispatch]);
 
@@ -28,7 +30,7 @@ const Menu = () => {
         </div>
       </div>
       <div className="row">
-        {menus.map((menu) => {
+        {menus.menus.map((menu) => {
           return <MenuNavbar title={menu.name} menu_id={menu.id} />;
         })}
       </div>

@@ -1,17 +1,19 @@
-import React from "react";
-import PhotoComponent from "../components/PhotoComponent";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-const PhotogalleryPage = (props) => {
-  const photos = props.photos.map((photo) => {
-    return (
-      <PhotoComponent
-        key={photo.id}
-        id={photo.id}
-        image={photo.image}
-        name={photo.name}
-      />
-    );
-  });
+import PhotoComponent from '../components/PhotoComponent';
+import { Loading } from '../components/LoadingComponent';
+
+import { fetchPhotos } from '../actions/photos';
+
+const PhotogalleryPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPhotos());
+  }, [dispatch]);
+
+  const { photos } = useSelector((state) => state);
 
   return (
     <div className="container">
@@ -21,7 +23,20 @@ const PhotogalleryPage = (props) => {
           <hr />
         </div>
       </div>
-      <div>{photos}</div>
+      <div>
+        {(photos.isLoading && <Loading />) ||
+          (photos.errMess && <h4>{photos.errMess}</h4>) ||
+          photos.photos.map((photo) => {
+            return (
+              <PhotoComponent
+                key={photo.id}
+                id={photo.id}
+                image={photo.image}
+                name={photo.name}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 };

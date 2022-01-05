@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/actionTypes';
 /*
 import * as api from '../api/index.js';
 
-export const fetchMenus = () => async (dispatch) => {
+export const fetchPhotos = () => async (dispatch) => {
   try {
     dispatch({
       type: ActionTypes.MENUS_LOADING,
@@ -27,17 +27,17 @@ export const fetchMenus = () => async (dispatch) => {
 };
 */
 
-import { MENUS } from '../shared/menus';
+import { PHOTOS } from '../shared/photos';
 
-export const fetchMenus = () => (dispatch) => {
+export const fetchPhotos = () => (dispatch) => {
   dispatch({
-    type: ActionTypes.START_LOADING_MENUS,
+    type: ActionTypes.START_LOADING_PHOTOS,
   });
 
   setTimeout(() => {
     dispatch({
-      type: ActionTypes.ADD_MENUS,
-      payload: MENUS,
+      type: ActionTypes.ADD_PHOTOS,
+      payload: PHOTOS,
     });
   }, 300);
 };

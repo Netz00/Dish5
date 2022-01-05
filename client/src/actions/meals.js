@@ -30,7 +30,7 @@ import { DISHES } from '../shared/dishes';
 
 export const fetchDishes = () => (dispatch) => {
   dispatch({
-    type: ActionTypes.DISHES_LOADING,
+    type: ActionTypes.START_LOADING_DISHES,
   });
 
   setTimeout(() => {
@@ -38,5 +38,6 @@ export const fetchDishes = () => (dispatch) => {
       type: ActionTypes.ADD_DISHES,
       payload: DISHES,
     });
+    dispatch({ type: ActionTypes.END_LOADING_DISHES });
   }, 300);
 };
