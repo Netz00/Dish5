@@ -8,7 +8,7 @@ export const Photos = (state = {
   switch (action.type) {
 
     case ActionTypes.ADD_PHOTOS:
-    return { ...state, isLoading: false, errMess: null, photos: action.payload };
+      return { ...state, isLoading: false, errMess: null, photos: action.payload };
 
     case ActionTypes.START_LOADING_PHOTOS:
       return {...state, isLoading: true, errMess: null, photos: []}
