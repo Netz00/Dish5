@@ -1,20 +1,20 @@
 import * as ActionTypes from '../constants/actionTypes';
-/*
+
 import * as api from '../api/index.js';
 
 export const fetchDishes = () => async (dispatch) => {
   try {
     dispatch({
-      type: ActionTypes.DISHES_LOADING,
+      type: ActionTypes.START_LOADING_DISHES,
     });
-    const { data } = await api.fetchMenus();
+    const { data } = await api.fetchAllMeals();
 
     dispatch({
       type: ActionTypes.ADD_DISHES,
       payload: data,
     });
 
-    dispatch({ type: ActionTypes.END_LOADING });
+    dispatch({ type: ActionTypes.END_LOADING_DISHES });
   } catch (error) {
     dispatch({
       type: ActionTypes.DISHES_FAILED,
@@ -24,8 +24,28 @@ export const fetchDishes = () => async (dispatch) => {
     console.log(error);
   }
 };
-*/
 
+export const deleteMeal = (id) => async (dispatch) => {
+  try {
+    await api.deleteMeal(id);
+
+    dispatch({ type: ActionTypes.DELETE_MEAL, payload: id });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createMeal = (meal) => async (dispatch) => {
+  try {
+    const { data } = await api.createMeal(meal);
+
+    dispatch({ type: ActionTypes.CREATE_MEAL, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/*
 import { DISHES } from '../shared/dishes';
 
 export const fetchDishes = () => (dispatch) => {
@@ -41,3 +61,4 @@ export const fetchDishes = () => (dispatch) => {
     dispatch({ type: ActionTypes.END_LOADING_DISHES });
   }, 300);
 };
+*/

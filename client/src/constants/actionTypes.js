@@ -1,11 +1,15 @@
 export const START_LOADING_MENUS = 'START_LOADING_MENUS';
 export const MENUS_FAILED = 'MENUS_FAILED';
 export const ADD_MENUS = 'ADD_MENUS';
+export const CREATE_MENU = 'CREATE_MENU';
+export const DELETE_MENU = 'DELETE_MENU';
 
 export const START_LOADING_DISHES = 'START_LOADING_DISHES';
 export const END_LOADING_DISHES = 'END_LOADING_DISHES';
 export const DISHES_FAILED = 'DISHES_FAILED';
 export const ADD_DISHES = 'ADD_DISHES';
+export const CREATE_MEAL = 'CREATE_MEAL';
+export const DELETE_MEAL = 'DELETE_MEAL';
 
 export const START_LOADING_PHOTOS = 'START_LOADING_PHOTOS';
 export const ADD_PHOTOS = 'ADD_PHOTOS';

@@ -16,6 +16,12 @@ export const Menus = ( state = {
     case ActionTypes.MENUS_FAILED:
       return {...state, isLoading: false, errMess: action.payload, menus: []}
 
+    case ActionTypes.DELETE_MENU:
+      return { ...state, isLoading: false, menus: state.menus.filter((menu) => menu.id !== action.payload) };
+
+    case ActionTypes.CREATE_MENU:
+      return { ...state, isLoading: false, menus: [...state.menus, action.payload] };
+
     default:
       return state;
   }

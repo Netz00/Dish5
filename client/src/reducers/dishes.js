@@ -18,6 +18,12 @@ export const Dishes = (state = {
         case ActionTypes.DISHES_FAILED:
             return {...state, isLoading: false, errMess: action.payload, dishes: []}
 
+        case ActionTypes.DELETE_MEAL:
+            return { ...state, isLoading: false, dishes: state.dishes.filter((menu) => menu.id !== action.payload) };
+
+        case ActionTypes.CREATE_MEAL:
+            return { ...state, isLoading: false, dishes: [...state.dishes, action.payload] };
+
         default: 
             return state;
     }

@@ -1,16 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import Create from '@material-ui/icons/Create';
+import Input from '../components/Auth/Input';
 
 import { Loading } from '../components/LoadingComponent';
 import Dishdetail from '../components/DishdetailComponent';
 import MenuNavbar from '../components/MenuNavbar';
 
-import { fetchDishes } from '../actions/meals';
-import { fetchMenus } from '../actions/menus';
+import { fetchDishes, createMeal } from '../actions/meals';
+import { fetchMenus, createMenu } from '../actions/menus';
+
+const initialMenuState = {
+  name: '',
+};
 
 const Menu = () => {
   const { menu_id } = useParams();
+
+  const initialMealState = {
+    name: '',
+    description: '',
+    price: 0,
+    menu_id: menu_id,
+  };
+
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const loggedIn = user?.result?.username;
 
   const dispatch = useDispatch();
 
@@ -20,6 +37,27 @@ const Menu = () => {
   }, [dispatch]);
 
   const { dishes, menus } = useSelector((state) => state);
+
+  const [menuForm, setMenuForm] = useState(initialMenuState);
+
+  const handleCreateMenu = (e) => {
+    e.preventDefault();
+
+    dispatch(createMenu(menuForm));
+  };
+
+  const handleMenuChange = (e) =>
+    setMenuForm({ ...menuForm, [e.target.name]: e.target.value });
+
+  const [mealForm, setMealForm] = useState(initialMealState);
+
+  const handleCreateMeal = (e) => {
+    e.preventDefault();
+
+    dispatch(createMeal(mealForm));
+  };
+  const handleMealChange = (e) =>
+    setMealForm({ ...mealForm, [e.target.name]: e.target.value });
 
   return (
     <div className="container">
@@ -33,6 +71,22 @@ const Menu = () => {
         {menus.menus.map((menu) => {
           return <MenuNavbar title={menu.name} menu_id={menu.id} />;
         })}
+
+        {loggedIn && (
+          <>
+            <form onSubmit={handleCreateMenu}>
+              <Input
+                name="name"
+                label="New Menu Name"
+                handleChange={handleMenuChange}
+                half
+              />
+              <Button type="submit" size="small" color="secondary">
+                <Create fontSize="small" /> &nbsp; Create
+              </Button>
+            </form>
+          </>
+        )}
       </div>
       {(dishes.isLoading && <Loading />) ||
         (dishes.errMess && <h4>{dishes.errMess}</h4>) || (
@@ -46,6 +100,33 @@ const Menu = () => {
                 );
               return <></>;
             })}
+            {loggedIn && (
+              <div key="newMeal" className="col-12 col-md-5 m-1 mt-4">
+                <form onSubmit={handleCreateMeal}>
+                  <Input
+                    name="name"
+                    label="New Meal Name"
+                    handleChange={handleMealChange}
+                    half
+                  />
+                  <Input
+                    name="description"
+                    label="New Meal Description"
+                    handleChange={handleMealChange}
+                    half
+                  />
+                  <Input
+                    name="price"
+                    label="New Meal Price"
+                    handleChange={handleMealChange}
+                    half
+                  />
+                  <Button type="submit" size="small" color="secondary">
+                    <Create fontSize="small" /> &nbsp; Create
+                  </Button>
+                </form>
+              </div>
+            )}
           </div>
         )}
     </div>

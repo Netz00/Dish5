@@ -1,12 +1,11 @@
 import * as ActionTypes from '../constants/actionTypes';
 
-/*
 import * as api from '../api/index.js';
 
 export const fetchMenus = () => async (dispatch) => {
   try {
     dispatch({
-      type: ActionTypes.MENUS_LOADING,
+      type: ActionTypes.START_LOADING_MENUS,
     });
     const { data } = await api.fetchMenus();
 
@@ -14,8 +13,6 @@ export const fetchMenus = () => async (dispatch) => {
       type: ActionTypes.ADD_MENUS,
       payload: data,
     });
-
-    dispatch({ type: ActionTypes.END_LOADING });
   } catch (error) {
     dispatch({
       type: ActionTypes.MENUS_FAILED,
@@ -25,7 +22,7 @@ export const fetchMenus = () => async (dispatch) => {
     console.log(error);
   }
 };
-*/
+/*
 
 import { MENUS } from '../shared/menus';
 
@@ -40,4 +37,25 @@ export const fetchMenus = () => (dispatch) => {
       payload: MENUS,
     });
   }, 300);
+};
+*/
+
+export const deleteMenu = (id) => async (dispatch) => {
+  try {
+    await api.deleteMenu(id);
+
+    dispatch({ type: ActionTypes.DELETE_MENU, payload: id });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createMenu = (menu) => async (dispatch) => {
+  try {
+    const { data } = await api.createMenu(menu);
+
+    dispatch({ type: ActionTypes.CREATE_MENU, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
 };
