@@ -3,12 +3,13 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    client: process.env.CLIENT,
+    client: process.env.DB_CLIENT,
     connection: {
       port: process.env.DB_PORT,
-      database: process.env.DATABASE,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
+      host: process.env.POSTGRES_HOST,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
     },
     pool: {
       min: 2,
@@ -20,12 +21,13 @@ module.exports = {
   },
 
   staging: {
-    client: process.env.CLIENT,
+    client: process.env.DB_CLIENT,
     connection: {
       port: process.env.DB_PORT,
-      database: process.env.DATABASE,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
+      host: process.env.POSTGRES_HOST,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
     },
     pool: {
       min: 2,
@@ -37,13 +39,13 @@ module.exports = {
   },
 
   production: {
-    client: process.env.CLIENT,
+    client: process.env.DB_CLIENT,
     connection: {
-      port: process.env.DB_PORT,
-      host: process.env.POSTGRES_HOST,
-      database: process.env.DATABASE,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
+      port: process.env.DB_PORT_PROD,
+      host: process.env.POSTGRES_HOST_PROD,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
     },
     pool: {
       min: 2,

@@ -1,0 +1,63 @@
+version: "3.5"
+
+#
+# Run this command from code directory
+#
+# sudo docker-compose -f ../deployment/docker-compose-production.yml up -d
+
+services:
+  postgres:
+    container_name: dish5-postgres
+    image: postgres:12-alpine3.14
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-dish5_api}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fesb2021}
+      POSTGRES_DB: ${POSTGRES_DB:-dish5}
+      PGDATA: /data/postgres
+    volumes:
+      - ./database/.volumes/dish5-postgresql:/data/postgres
+    ports:
+      - "5431:5432"
+    networks:
+      - postgres
+    expose:
+      - 5432 # Publishes port to other containers but NOT to host machine
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    depends_on:
+      - postgres
+    networks:
+      - postgres
+    restart: unless-stopped
+    
+  node-webapp:
+    build:
+      context: ../server
+      dockerfile: ./../deployment/dockerfile
+    container_name: dish5-webapp
+    networks:
+      - postgres
+    ports:
+      - "3123:3123"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+ 
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
