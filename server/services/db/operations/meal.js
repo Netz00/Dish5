@@ -8,6 +8,7 @@ module.exports = {
   insert,
   patch,
   remove,
+  getAllGroceries,
 };
 
 function get(id) {
@@ -15,7 +16,9 @@ function get(id) {
 }
 
 function getAll() {
-  return Meal.query();
+  //return Meal.query();
+
+  return Meal.query().select('id', 'name', 'price', 'description', 'menu_id');
 }
 
 function search(term) {
@@ -37,4 +40,15 @@ function patch(meal) {
 
 async function remove(id) {
   return Meal.query().deleteById(id);
+}
+
+// get all groceries for specific meal
+async function getAllGroceries(id) {
+  return Meal.query()
+    .select('id')
+    .findById(id)
+    .withGraphFetched('groceries')
+    .modifyGraph('groceries', (builder) => {
+      builder.select('id', 'name');
+    });
 }

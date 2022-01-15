@@ -6,14 +6,12 @@ const {
   insert,
   patch,
   remove,
+  getAllGroceries,
 } = require('../controllers/meals.js');
 
-const router = express.Router();
+const { auth } = require('../middleware/auth.js');
 
-/**
- * Search all meals by name
- */
-router.get('/search', searchByName);
+const router = express.Router();
 
 /**
  * Returns array of all meals
@@ -23,24 +21,38 @@ router.get('/search', searchByName);
 router.get('/', getAll);
 
 /**
+ * Inserts new meal with desired values
+ */
+router.post('/', auth, insert);
+
+/**
+ * Removes meal with selected id
+ */
+router.delete('/:id', auth, remove);
+
+
+
+
+
+/**
+ * Get all groceries for specified meal id
+ */
+router.get('/groceries/:id', getAllGroceries);
+
+/**
+ * Search all meals by name
+ */
+router.get('/search', searchByName);
+
+/**
  * Returns meal with selected id
  */
 router.get('/:id', get);
 
 /**
- * Inserts new meal with desired values
- */
-router.post('/', insert);
-
-/**
  * Updates meal with new values
  * just send changed values, not entire meal object(PATCH not PUT)
  */
-router.patch('/:id', patch);
-
-/**
- * Removes meal with selected id
- */
-router.delete('/:id', remove);
+router.patch('/:id', auth, patch);
 
 module.exports = router;
