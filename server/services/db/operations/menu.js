@@ -4,7 +4,18 @@ module.exports = {
   get,
   getAll,
   getAllMeals,
+  IdExists,
+  findByIdAndRemove,
+  insert
 };
+
+function IdExists(id) {
+  return Menu.query().findById(id);
+}
+
+function findByIdAndRemove(id) {
+  return Menu.query().deleteById(id);
+}
 
 // get al menus
 function getAll() {
@@ -22,14 +33,13 @@ function get(id) {
     });
 }
 
-
 // get all meals for all menus
-function getAllMeals(id) {
+function getAllMeals() {
   return Menu.query()
     .select('id', 'name')
     .withGraphFetched('meals')
     .modifyGraph('meals', (builder) => {
-      builder.select('id', 'name', 'price');
+      builder.select('id', 'name', 'price', 'description');
     });
 }
 
@@ -40,3 +50,6 @@ function getAllMeals(id) {
 // remove meals from menu
 
 // remove menu
+function insert(menu) {
+  return Menu.query().insert(menu);
+}
