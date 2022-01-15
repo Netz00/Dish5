@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
-
-const secret = 'test';
+require('dotenv').config();
 
 module.exports = {
   auth,
@@ -8,13 +7,13 @@ module.exports = {
 
 async function auth(req, res, next) {
   try {
-    const token = req.headers.authorization.split(' ')[1];
-    const isCustomAuth = token.length < 500;
+    const token = req.headers.authorization?.split(' ')[1];
+    const isCustomAuth = token?.length < 500;
 
     let decodedData;
 
     if (token && isCustomAuth) {
-      decodedData = jwt.verify(token, secret);
+      decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
       req.userId = decodedData?.id;
     } else {
@@ -26,5 +25,6 @@ async function auth(req, res, next) {
     next();
   } catch (error) {
     console.log(error);
+    return res.status(409).json({ message: error.message });
   }
 }

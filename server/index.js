@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 app.use('/meals', mealRoutes);
 app.use('/menus', menuRoutes);
 
-app.use("/user", userRoutes);
+app.use("/users", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
