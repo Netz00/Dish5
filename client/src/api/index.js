@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'http://34.78.94.106:3123/' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
@@ -9,14 +9,17 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const signIn = (formData) => API.post('/user/signin', formData);
-export const signUp = (formData) => API.post('/user/signup', formData);
+export const signIn = (formData) => API.post('/users/signin', formData);
+export const signUp = (formData) => API.post('/users/signup', formData);
 
 export const fetchMeal = (id) => API.get(`/meals/${id}`);
 export const fetchMeals = (page) => API.get(`/meals?page=${page}`);
 export const fetchAllMeals = () => API.get(`/meals`);
-export const fetchMealsBySearch = (searchQuery) =>
-  API.get(`/meals/search?searchQuery=${searchQuery.search}`);
+export const fetchMealsBySearch = (searchQuery) => API.get(`/meals/search?searchQuery=${searchQuery.search}`);
+export const deleteMeal = (id) => API.delete(`/meals/${id}`);
+export const createMeal = (newMeal) => API.post('/meals', newMeal);
 
 export const fetchMenus = () => API.get(`/menus`);
 export const fetchMenuMeals = (id) => API.get(`/menus/${id}`);
+export const deleteMenu = (id) => API.delete(`/menus/${id}`);
+export const createMenu = (newMenu) => API.post('/menus', newMenu);

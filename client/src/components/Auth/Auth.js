@@ -20,7 +20,10 @@ const initialState = {
 const SignUp = ({ isModalOpen, setIsModalOpen }) => {
   const [form, setForm] = useState(initialState);
 
-  const [isSignup, setIsSignup] = useState(false);
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+  const loggedIn = user?.result?.username;
+
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
@@ -34,16 +37,10 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
     setShowPassword(false);
   };
 
-  const switchMode = () => {
-    setForm(initialState);
-    setIsSignup((prevIsSignup) => !prevIsSignup);
-    setShowPassword(false);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isSignup) {
+    if (loggedIn) {
       dispatch(signup(form, history));
     } else {
       dispatch(signin(form, history));
@@ -56,12 +53,12 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <Modal isOpen={isModalOpen} toggle={toggleModal}>
       <ModalHeader toggle={toggleModal}>
-        {isSignup ? 'Sign up' : 'Sign in'}
+        {loggedIn ? 'Sign up new employee' : 'Sign in'}
       </ModalHeader>
       <ModalBody>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            {isSignup && (
+            {loggedIn && (
               <>
                 <Input
                   name="firstName"
@@ -91,7 +88,7 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
               type={showPassword ? 'text' : 'password'}
               handleShowPassword={handleShowPassword}
             />
-            {isSignup && (
+            {loggedIn && (
               <Input
                 name="confirmPassword"
                 label="Repeat Password"
@@ -107,18 +104,8 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
             color="primary"
             className={classes.submit}
           >
-            {isSignup ? 'Sign Up' : 'Sign In'}
+            {loggedIn ? 'Sign Up' : 'Sign In'}
           </Button>
-
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Button onClick={switchMode}>
-                {isSignup
-                  ? 'Already have an account? Sign in'
-                  : "Don't have an account? Sign Up"}
-              </Button>
-            </Grid>
-          </Grid>
         </form>
       </ModalBody>
     </Modal>
