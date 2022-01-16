@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/actionTypes';
-/*import * as api from '../api/index.js';
+import * as api from '../api/index.js';
 
 export const signin = (formData, router) => async (dispatch) => {
   try {
@@ -24,7 +24,7 @@ export const signup = (formData, router) => async (dispatch) => {
     console.log(error);
   }
 };
-*/
+/*
 
 import { SIGNIN } from '../shared/signin';
 import { SIGNUP } from '../shared/signup';
@@ -48,3 +48,4 @@ export const signup = (formData, router) => async (dispatch) => {
     console.log(error);
   }
 };
+*/

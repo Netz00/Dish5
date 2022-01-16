@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/actionTypes';
 
-/*
+
 import * as api from '../api/index.js';
 
 export const fetchMenus = () => async (dispatch) => {
@@ -43,7 +43,7 @@ export const createMenu = (menu) => async (dispatch) => {
     console.log(error);
   }
 };
-*/
+/*
 
 import { MENUS } from '../shared/menus';
 
@@ -76,3 +76,4 @@ export const createMenu = (menu) => async (dispatch) => {
     console.log(error);
   }
 };
+*/

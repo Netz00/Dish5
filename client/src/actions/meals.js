@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/actionTypes';
-/*
+
 import * as api from '../api/index.js';
 
 export const fetchDishes = () => async (dispatch) => {
@@ -44,7 +44,7 @@ export const createMeal = (meal) => async (dispatch) => {
     console.log(error);
   }
 };
-*/
+/*
 
 import { DISHES } from '../shared/dishes';
 
@@ -78,3 +78,4 @@ export const deleteMeal = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+*/
