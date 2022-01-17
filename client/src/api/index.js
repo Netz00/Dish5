@@ -23,3 +23,6 @@ export const fetchMenus = () => API.get(`/menus`);
 export const fetchMenuMeals = (id) => API.get(`/menus/${id}`);
 export const deleteMenu = (id) => API.delete(`/menus/${id}`);
 export const createMenu = (newMenu) => API.post('/menus', newMenu);
+
+export const fetchReservations = () => API.get(`/reservations`);
+export const createReservation = (newReservation) => API.post('/reservations', newReservation);
