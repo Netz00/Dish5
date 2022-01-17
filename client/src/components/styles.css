@@ -1,7 +1,7 @@
 .row-content {
-  margin: 0px !important;
-  padding: 0px 20px !important;
-  min-height: 0px !important;
+  margin: 0px;
+  padding: 0px 20px;
+  min-height: 0px;
 }
 
 .faq-row {

@@ -31,7 +31,7 @@ function RenderDish({ dish }) {
       {loggedIn && (
         <Button
           color="light"
-          className="btn-block mt-1"
+          className="mt-1"
           onClick={() => dispatch(deleteMeal(dish.id))}
         >
           <DeleteIcon fontSize="small" /> &nbsp; Obriši jelo

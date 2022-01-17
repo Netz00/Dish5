@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 const mapStyles = {
-  height: "100vh",
-  width: "100%",
+  height: '100vh',
+  width: '100%',
 };
 
 class ContactPage extends Component {
-
   render() {
     return (
       <div className="container">
@@ -16,7 +15,7 @@ class ContactPage extends Component {
             <hr />
           </div>
         </div>
-        <div className="row row-content">
+        <div className="row row-content-contact">
           <div className="col-12 col-sm-4 offset-sm-1">
             <h5>Adresa</h5>
             <div>
@@ -41,12 +40,12 @@ class ContactPage extends Component {
             <div>
               <i className="fa fa-phone"></i>: +385 1234 5678
               <br />
-              <i className="fa fa-envelope"></i>:{" "}
+              <i className="fa fa-envelope"></i>:{' '}
               <a href="mailto:restoran@dish5.com">restoran@dish5.com</a>
             </div>
           </div>
         </div>
-        <div className="row row-content">
+        <div className="row row-content-contact">
           <div>
             <h5>Pronađite nas na karti</h5>
             <br />
