@@ -53,7 +53,7 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <Modal isOpen={isModalOpen} toggle={toggleModal}>
       <ModalHeader toggle={toggleModal}>
-        {loggedIn ? 'Sign up new employee' : 'Sign in'}
+        {loggedIn ? 'Registracija novog zaposlenika' : 'Prijavi se'}
       </ModalHeader>
       <ModalBody>
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -62,14 +62,14 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
               <>
                 <Input
                   name="firstName"
-                  label="First Name"
+                  label="Ime"
                   handleChange={handleChange}
                   autoFocus
                   half
                 />
                 <Input
                   name="lastName"
-                  label="Last Name"
+                  label="Prezime"
                   handleChange={handleChange}
                   half
                 />
@@ -77,13 +77,13 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
             )}
             <Input
               name="email"
-              label="Email Address"
+              label="Email"
               handleChange={handleChange}
               type="email"
             />
             <Input
               name="password"
-              label="Password"
+              label="Lozinka"
               handleChange={handleChange}
               type={showPassword ? 'text' : 'password'}
               handleShowPassword={handleShowPassword}
@@ -91,7 +91,7 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
             {loggedIn && (
               <Input
                 name="confirmPassword"
-                label="Repeat Password"
+                label="Ponovite lozinku"
                 handleChange={handleChange}
                 type="password"
               />
@@ -104,7 +104,7 @@ const SignUp = ({ isModalOpen, setIsModalOpen }) => {
             color="primary"
             className={classes.submit}
           >
-            {loggedIn ? 'Sign Up' : 'Sign In'}
+            {loggedIn ? 'Registriraj' : 'Prijava'}
           </Button>
         </form>
       </ModalBody>

@@ -22,7 +22,7 @@ const MenuNavbar = ({ title, menu_id }) => {
             color="secondary"
             onClick={() => dispatch(deleteMenu(menu_id))}
           >
-            <DeleteIcon fontSize="small" /> &nbsp; Delete
+            <DeleteIcon fontSize="small" /> &nbsp; Obriši
           </Button>
         )}
         <Link

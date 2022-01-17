@@ -116,13 +116,13 @@ const Header = () => {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <Button size="sm" outline onClick={toggleModal}>
-                  {user ? 'Sign up new employee' : 'Sign in'}
+                  {user ? 'Registracija zaposlenika' : 'Prijava'}
                 </Button>
               </NavItem>
               <NavItem>
                 {user && (
                   <Button size="sm" outline onClick={logout}>
-                    Log out
+                    Odjava
                   </Button>
                 )}
               </NavItem>

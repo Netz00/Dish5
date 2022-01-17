@@ -34,7 +34,7 @@ function RenderDish({ dish }) {
           color="secondary"
           onClick={() => dispatch(deleteMeal(dish.id))}
         >
-          <DeleteIcon fontSize="small" /> &nbsp; Delete
+          <DeleteIcon fontSize="small" /> &nbsp; Obriši
         </Button>
       )}
     </div>

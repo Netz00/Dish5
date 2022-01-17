@@ -77,12 +77,12 @@ const Menu = () => {
             <form onSubmit={handleCreateMenu}>
               <Input
                 name="name"
-                label="New Menu Name"
+                label="Novi meni"
                 handleChange={handleMenuChange}
                 half
               />
               <Button type="submit" size="small" color="secondary">
-                <Create fontSize="small" /> &nbsp; Create
+                <Create fontSize="small" /> &nbsp; Dodaj
               </Button>
             </form>
           </>
@@ -105,24 +105,24 @@ const Menu = () => {
                 <form onSubmit={handleCreateMeal}>
                   <Input
                     name="name"
-                    label="New Meal Name"
+                    label="Naziv novog jela"
                     handleChange={handleMealChange}
                     half
                   />
                   <Input
                     name="description"
-                    label="New Meal Description"
+                    label="Opis novog jela"
                     handleChange={handleMealChange}
                     half
                   />
                   <Input
                     name="price"
-                    label="New Meal Price"
+                    label="Cijena novog jela"
                     handleChange={handleMealChange}
                     half
                   />
                   <Button type="submit" size="small" color="secondary">
-                    <Create fontSize="small" /> &nbsp; Create
+                    <Create fontSize="small" /> &nbsp; Dodaj
                   </Button>
                 </form>
               </div>
