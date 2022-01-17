@@ -101,6 +101,17 @@ const Header = () => {
                   Kontakt
                 </NavLink>
               </NavItem>
+              {user && (
+                <NavItem>
+                  <NavLink
+                    className="nav-link"
+                    style={{ color: '#2e3e4d' }}
+                    to="/groceries"
+                  >
+                    Namirnice
+                  </NavLink>
+                </NavItem>
+              )}
             </Nav>
             <Nav className="ml-auto" navbar>
               <NavItem>

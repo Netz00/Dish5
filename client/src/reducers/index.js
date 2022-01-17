@@ -5,6 +5,7 @@ import { Dishes } from './dishes';
 import { Photos } from './photos';
 import { Menus } from './menus';
 import { Auth } from './auth';
+import { Groceries } from './groceries';
 
 import { InitialFeedback } from '../constants/forms';
 
@@ -13,6 +14,7 @@ export const reducers = combineReducers({
   photos: Photos,
   menus: Menus,
   auth: Auth,
+  groceries: Groceries,
   ...createForms({
     feedback: InitialFeedback,
   }),

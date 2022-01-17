@@ -17,3 +17,7 @@ export const PHOTOS_FAILED = 'PHOTOS_FAILED';
 
 export const AUTH = 'AUTH';
 export const LOGOUT = 'LOGOUT';
+
+export const START_LOADING_GROCERIES = 'START_LOADING_GROCERIES';
+export const ADD_GROCERIES = 'ADD_GROCERIES';
+export const GROCERIES_FAILED = 'GROCERIES_FAILED';
