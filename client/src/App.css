@@ -73,6 +73,7 @@ address {
   position: relative;
   overflow: hidden;
   align-items: center;
+  color: #273c4e;
 }
 
 .card::before {
@@ -80,7 +81,7 @@ address {
   content: '';
   width: 80%;
   height: 220%;
-  background: rgba(147, 149, 172, 0.7);
+  background: rgba(39, 60, 78, 0.6);
   top: -50%;
   left: -100%;
   z-index: 1;
@@ -111,6 +112,7 @@ address {
   left: 0;
   z-index: 2;
   transition: 1.1s;
+  color: rgb(255, 255, 255);
 }
 
 .card:hover .card-text {
