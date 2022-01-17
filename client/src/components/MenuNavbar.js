@@ -19,10 +19,11 @@ const MenuNavbar = ({ title, menu_id }) => {
         {loggedIn && (
           <Button
             size="small"
-            color="secondary"
+            color="light"
             onClick={() => dispatch(deleteMenu(menu_id))}
+            className="mb-1"
           >
-            <DeleteIcon fontSize="small" /> &nbsp; Obriši
+            <DeleteIcon fontSize="small" /> &nbsp; Obriši meni
           </Button>
         )}
         <Link

@@ -30,11 +30,11 @@ function RenderDish({ dish }) {
       </Card>
       {loggedIn && (
         <Button
-          size="small"
-          color="secondary"
+          color="light"
+          className="btn-block mt-1"
           onClick={() => dispatch(deleteMeal(dish.id))}
         >
-          <DeleteIcon fontSize="small" /> &nbsp; Obriši
+          <DeleteIcon fontSize="small" /> &nbsp; Obriši jelo
         </Button>
       )}
     </div>

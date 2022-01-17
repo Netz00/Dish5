@@ -139,3 +139,7 @@ address {
 .row-title {
   margin: 0 10px;
 }
+
+.button-logout {
+  margin-left: 5px;
+}

@@ -74,15 +74,14 @@ const Menu = () => {
 
         {loggedIn && (
           <>
-            <form onSubmit={handleCreateMenu}>
+            <form onSubmit={handleCreateMenu} className="ml-2">
               <Input
                 name="name"
-                label="Novi meni"
+                label="Naziv menija"
                 handleChange={handleMenuChange}
-                half
               />
-              <Button type="submit" size="small" color="secondary">
-                <Create fontSize="small" /> &nbsp; Dodaj
+              <Button type="submit" size="small" color="light" className="mt-1">
+                <Create fontSize="small" /> &nbsp; Dodaj meni
               </Button>
             </form>
           </>
@@ -105,24 +104,29 @@ const Menu = () => {
                 <form onSubmit={handleCreateMeal}>
                   <Input
                     name="name"
-                    label="Naziv novog jela"
+                    label="Naziv jela"
                     handleChange={handleMealChange}
                     half
                   />
                   <Input
                     name="description"
-                    label="Opis novog jela"
+                    label="Opis jela"
                     handleChange={handleMealChange}
                     half
                   />
                   <Input
                     name="price"
-                    label="Cijena novog jela"
+                    label="Cijena jela"
                     handleChange={handleMealChange}
                     half
                   />
-                  <Button type="submit" size="small" color="secondary">
-                    <Create fontSize="small" /> &nbsp; Dodaj
+                  <Button
+                    type="submit"
+                    size="small"
+                    color="light"
+                    className="mt-1"
+                  >
+                    <Create fontSize="small" /> &nbsp; Dodaj jelo
                   </Button>
                 </form>
               </div>
