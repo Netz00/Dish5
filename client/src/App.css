@@ -116,3 +116,7 @@ address {
 .card:hover .card-text {
   top: 80px;
 }
+
+.button-logout {
+  margin-left: 5px;
+}
