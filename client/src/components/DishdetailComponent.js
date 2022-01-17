@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardTitle, CardText, CardImgOverlay } from 'reactstrap';
+import { Card, CardImg, CardTitle, CardText } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Button } from 'reactstrap';
@@ -15,6 +15,7 @@ function RenderDish({ dish }) {
   return (
     <div className="col-12 col-md-5 m-1 mt-4">
       <Card>
+        <CardTitle className="mt-2">{dish.name}</CardTitle>
         <CardImg
           width="100%"
           src={`/assets/images/${dish.name
@@ -22,11 +23,8 @@ function RenderDish({ dish }) {
             .toLowerCase()}.png`}
           alt={dish.name}
         />
-        <CardImgOverlay>
-          <CardTitle>{dish.name}</CardTitle>
-        </CardImgOverlay>
         <CardText>{dish.description}</CardText>
-        <CardTitle>{dish.price} Kn</CardTitle>
+        <CardTitle className="mt-1">{dish.price} Kn</CardTitle>
       </Card>
       {loggedIn && (
         <Button
