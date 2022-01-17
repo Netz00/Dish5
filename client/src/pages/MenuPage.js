@@ -23,7 +23,6 @@ const Menu = () => {
     name: '',
     description: '',
     price: 0,
-    menu_id: menu_id,
   };
 
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -54,7 +53,10 @@ const Menu = () => {
   const handleCreateMeal = (e) => {
     e.preventDefault();
 
-    dispatch(createMeal(mealForm));
+    const newMeal = mealForm;
+    newMeal.menu_id = menu_id;
+
+    dispatch(createMeal(newMeal));
   };
   const handleMealChange = (e) =>
     setMealForm({ ...mealForm, [e.target.name]: e.target.value });
