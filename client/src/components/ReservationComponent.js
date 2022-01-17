@@ -1,6 +1,5 @@
 import React from 'react';
 import Faq from 'react-faq-component';
-import './styles.css';
 import { Grow } from '@material-ui/core';
 
 const data = {
