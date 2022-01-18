@@ -1,33 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Faq from 'react-faq-component';
 import { Grow } from '@material-ui/core';
+import { Loading } from './LoadingComponent';
 
-const data = {
-  title: 'Nadolazeće rezervacije',
-  rows: [
-    {
-      title: '4 OSOBE - 23.1.2022. (13:30) - HORVAT',
-      content: `<b>Ime i prezime: </b>Karla Horvat<br>
-      <b>Kontakt broj: </b>0951234567<br>
-      <b>Email: </b>karlahorvat@gmail.com<br>
-      <p><h2>Rezervacija je potvđena &#9989<h2><p>`,
-    },
-    {
-      title: '6 OSOBA - 23.1.2022. (13:30) - ANIĆ',
-      content: `<b>Ime i prezime: </b>Karla Horvat<br>
-      <b>Kontakt broj: </b>0951234567<br>
-      <b>Email: </b>karlahorvat@gmail.com<br>
-      <p><h2>Rezervacija je potvđena &#9989<h2><p>`,
-    },
-    {
-      title: '5 OSOBA - 23.1.2022. (13:30) - ČEKO',
-      content: `<b>Ime i prezime: </b>Karla Horvat<br>
-      <b>Kontakt broj: </b>0951234567<br>
-      <b>Email: </b>karlahorvat@gmail.com<br>
-      <p><h2>Rezervacija je potvđena &#9989<h2><p>`,
-    },
-  ],
-};
+import { fetchReservations } from '../actions/reservations';
 
 const styles = {
   bgColor: 'transparent',
@@ -42,10 +20,32 @@ const config = {
 };
 
 const ReservationComponent = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchReservations());
+  }, [dispatch]);
+
+  const { reservations } = useSelector((state) => state);
+
+  const data = {
+    title: 'Nadolazeće rezervacije',
+    rows: reservations.reservations.map((reservation) => ({
+      title: `${reservation.number_of_persons} OSOBE - ${reservation.arrival_time} - ${reservation.lastname}`,
+      content: `<b>Ime i prezime: </b>${reservation.firstname + reservation.lastname}<br>
+      <b>Kontakt broj: </b>${reservation.contact_number}<br>
+      <b>Email: </b>${reservation.email}<br>
+      <p><h2>Rezervacija je potvđena &#9989<h2><p>`,
+    })),
+  };
+
   return (
     <Grow in>
       <div>
-        <Faq data={data} styles={styles} config={config} />
+        {(reservations.isLoading && <Loading />) ||
+          (reservations.errMess && <h4>{reservations.errMess}</h4>) || (
+            <Faq data={data} styles={styles} config={config} />
+          )}
       </div>
     </Grow>
   );

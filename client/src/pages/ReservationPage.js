@@ -1,21 +1,27 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Col, Row } from 'reactstrap';
-
+import { useDispatch } from 'react-redux';
 import ReservationComponent from '../components/ReservationComponent';
+import { createReservation } from '../actions/reservations';
 
 const Reservation = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   const loggedIn = user?.result?.username;
-
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    console.log(errors);
+    if (
+      errors &&
+      Object.keys(errors).length === 0 &&
+      Object.getPrototypeOf(errors) === Object.prototype
+    )
+      dispatch(createReservation(data));
+
     alert('Uspješno ste rezervirali svoje mjesto!!');
   };
 
@@ -42,7 +48,7 @@ const Reservation = () => {
                   className="form-control"
                   type="text"
                   placeholder="Ime"
-                  {...register('Ime', { required: true, maxLength: 64 })}
+                  {...register('firstname', { required: true, maxLength: 64 })}
                 />
               </Row>
               <Row className="form-group">
@@ -53,7 +59,7 @@ const Reservation = () => {
                   className="form-control"
                   type="text"
                   placeholder="Prezime"
-                  {...register('Prezime', { required: true, maxLength: 64 })}
+                  {...register('lastname', { required: true, maxLength: 64 })}
                 />
               </Row>
               <Row className="form-group">
@@ -64,7 +70,7 @@ const Reservation = () => {
                   className="form-control"
                   type="tel"
                   placeholder="Kontakt broj"
-                  {...register('Kontakt broj', {
+                  {...register('contact_number', {
                     required: true,
                     maxLength: 12,
                   })}
@@ -78,7 +84,7 @@ const Reservation = () => {
                   className="form-control"
                   type="text"
                   placeholder="Email"
-                  {...register('Email', {
+                  {...register('email', {
                     required: true,
                     pattern: /^\S+@\S+$/i,
                   })}
@@ -90,7 +96,7 @@ const Reservation = () => {
                 </Col>
                 <select
                   className="form-control"
-                  {...register('Broj osoba', { required: true })}
+                  {...register('number_of_persons', { required: true })}
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -110,7 +116,7 @@ const Reservation = () => {
                   className="form-control"
                   type="datetime-local"
                   placeholder="Datum i vrijeme dolaska"
-                  {...register('Datum i vrijeme dolaska', { required: true })}
+                  {...register('arrival_time', { required: true })}
                 />
               </Row>
               <Row className="form-group">
