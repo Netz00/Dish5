@@ -1,234 +1,132 @@
-import React, { Component } from 'react';
-import { Button, Label, Col, Row } from 'reactstrap';
-import { Control, Form, Errors } from 'react-redux-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Button, Col, Row } from 'reactstrap';
 
-import { actions } from 'react-redux-form';
-import { connect } from 'react-redux';
-
-import Date from '../components/DatePickerComponent';
 import ReservationComponent from '../components/ReservationComponent';
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !val || val.length <= len;
-const minLength = (len) => (val) => val && val.length >= len;
-const isNumber = (val) => !isNaN(Number(val));
-const validEmail = (val) =>
-  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const Reservation = () => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const loggedIn = user?.result?.username;
 
-const mapDispatchToProps = (dispatch) => ({
-  resetFeedbackForm: () => {
-    dispatch(actions.reset('feedback'));
-  },
-});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    console.log(errors);
+    alert('Uspješno ste rezervirali svoje mjesto!!');
+  };
 
-const user = JSON.parse(localStorage.getItem('profile'));
-const loggedIn = user?.result?.username;
-
-class ReservationPage extends Component {
-  handleSubmit(values) {
-    console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
-    this.props.resetFeedbackForm();
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h3>Rezervacije</h3>
+          <hr />
+        </div>
+      </div>
+      {!loggedIn && (
+        <div className="row row-content">
           <div className="col-12">
-            <h3>Rezervacije</h3>
-            <hr />
+            <h3>Rezervirajte svoje mjesto odmah</h3>
+          </div>
+          <div className="col-12 col-md-9">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="firstName">Ime</label>
+                </Col>
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Ime"
+                  {...register('Ime', { required: true, maxLength: 64 })}
+                />
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="lastName">Prezime</label>
+                </Col>
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Prezime"
+                  {...register('Prezime', { required: true, maxLength: 64 })}
+                />
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="contact">Kontakt broj</label>
+                </Col>
+                <input
+                  className="form-control"
+                  type="tel"
+                  placeholder="Kontakt broj"
+                  {...register('Kontakt broj', {
+                    required: true,
+                    maxLength: 12,
+                  })}
+                />
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="email">Email</label>
+                </Col>
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Email"
+                  {...register('Email', {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
+                />
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="peopleNumber">Broj osoba</label>
+                </Col>
+                <select
+                  className="form-control"
+                  {...register('Broj osoba', { required: true })}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3">
+                  <label className="dateTime">Datum i vrijeme dolaska</label>
+                </Col>
+                <input
+                  className="form-control"
+                  type="datetime-local"
+                  placeholder="Datum i vrijeme dolaska"
+                  {...register('Datum i vrijeme dolaska', { required: true })}
+                />
+              </Row>
+              <Row className="form-group">
+                <Col className="md-3 offset-9">
+                  <Button type="submit" color="light">
+                    Rezerviraj
+                  </Button>
+                </Col>
+              </Row>
+            </form>
           </div>
         </div>
+      )}
+      {loggedIn && <ReservationComponent />}
+    </div>
+  );
+};
 
-        {!loggedIn && (
-          <div className="row row-content">
-            <div className="col-12">
-              <h3>Rezervirajte svoje mjesto odmah</h3>
-            </div>
-            <div className="col-12 col-md-9">
-              <Form
-                model="feedback"
-                onSubmit={(values) => this.handleSubmit(values)}
-              >
-                <Row className="form-group">
-                  <Label htmlFor="firstName" md={3}>
-                    Ime
-                  </Label>
-                  <Col md={10}>
-                    <Control.text
-                      model=".firstName"
-                      id="firstName"
-                      name="firstName"
-                      placeholder="Ime"
-                      className="form-control"
-                      validators={{
-                        required,
-                        minLength: minLength(3),
-                        maxLength: maxLength(15),
-                      }}
-                    />
-                    <Errors
-                      class="text-danger"
-                      model=".firstName"
-                      show="touched"
-                      messages={{
-                        minLength: 'Mora biti dulje od 2 slova',
-                        maxLength: 'Mora biti kraće od 15 slova',
-                      }}
-                    />
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="lastName" md={3}>
-                    Prezime
-                  </Label>
-                  <Col md={10}>
-                    <Control.text
-                      model=".lastName"
-                      id="lastname"
-                      name="lastName"
-                      placeholder="Prezime"
-                      className="form-control"
-                      validators={{
-                        required,
-                        minLength: minLength(3),
-                        maxLength: maxLength(15),
-                      }}
-                    />
-                    <Errors
-                      class="text-danger"
-                      model=".lastName"
-                      show="touched"
-                      messages={{
-                        minLength: 'Mora biti dulje od 2 slova',
-                        maxLength: 'Mora biti kraće od 15 slova',
-                      }}
-                    />
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="telnum" md={3}>
-                    Kontakt broj
-                  </Label>
-                  <Col md={10}>
-                    <Control.text
-                      model=".telnum"
-                      id="telnum"
-                      name="telnum"
-                      placeholder="Kontakt broj"
-                      className="form-control"
-                      validators={{
-                        required,
-                        minLength: minLength(3),
-                        maxLength: maxLength(15),
-                        isNumber,
-                      }}
-                    />
-                    <Errors
-                      class="text-danger"
-                      model=".telnum"
-                      show="touched"
-                      messages={{
-                        minLength: 'Mora biti broj dulji od 2 znamenke',
-                        maxLength: 'Mora biti broj kraći od 15 znamenki',
-                        isNumber: 'Mora biti broj',
-                      }}
-                    />
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="email" md={3}>
-                    Email
-                  </Label>
-                  <Col md={10}>
-                    <Control.text
-                      model=".email"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      className="form-control"
-                      validators={{
-                        required,
-                        validEmail,
-                      }}
-                    />
-                    <Errors
-                      class="text-danger"
-                      model=".email"
-                      show="touched"
-                      messages={{
-                        validEmail: 'Nevažeća email adresa',
-                      }}
-                    />
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="personnum" md={3}>
-                    Broj osoba
-                  </Label>
-                  <Col md={3}>
-                    <Control.select
-                      model=".personnum"
-                      id="personnum"
-                      name="personnum"
-                      className="form-control"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </Control.select>
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="date" md={3}>
-                    Datum dolaska
-                  </Label>
-                  <Col md={3}>
-                    <Date />
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Label htmlFor="time" md={3}>
-                    Vrijeme dolaska
-                  </Label>
-                  <Col md={3}>
-                    <Control.select
-                      model=".time"
-                      name="time"
-                      className="form-control"
-                    >
-                      <option value="12:00">12:00</option>
-                      <option value="13:00">13:00</option>
-                      <option value="14:00">14:00</option>
-                      <option value="15:00">15:00</option>
-                      <option value="16:00">16:00</option>
-                      <option value="17:00">17:00</option>
-                      <option value="18:00">18:00</option>
-                      <option value="19:00">19:00</option>
-                      <option value="20:00">20:00</option>
-                      <option value="21:00">21:00</option>
-                    </Control.select>
-                  </Col>
-                </Row>
-                <Row className="form-group">
-                  <Col md={{ size: 10, offset: 8 }}>
-                    <Button type="submit" color="light">
-                      Rezerviraj
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
-            </div>
-          </div>
-        )}
-        {loggedIn && <ReservationComponent />}
-      </div>
-    );
-  }
-}
-
-export default connect(mapDispatchToProps)(ReservationPage);
+export default Reservation;
